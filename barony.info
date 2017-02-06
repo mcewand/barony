@@ -1,0 +1,93 @@
+name = Barony
+description = A starter profile for baronial websites for the Society for Creative Anachronism
+core = 7.x
+version = 7.x-0.1
+
+
+; Core
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = field
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = syslog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = statistics
+dependencies[] = taxonomy
+dependencies[] = toolbar
+
+; Calendars
+dependencies[] = calendar
+dependencies[] = jquery_calendar
+
+; chaos tools
+dependencies[] = ctools
+
+; context
+;dependencies[] = context
+;dependencies[] = context_ui
+
+; date/time
+dependencies[] = date
+
+; features
+dependencies[] = features
+
+; fields
+dependencies[] = field_group
+dependencies[] = entityreference
+
+; media
+dependencies[] = imce
+dependencies[] = imce_wysiwyg
+
+; nodequeue
+dependencies[] = nodequeue
+
+; other
+;dependencies[] = diff
+dependencies[] = entity
+dependencies[] = entitycache
+dependencies[] = libraries
+dependencies[] = pathauto
+dependencies[] = strongarm
+dependencies[] = token
+
+; statistics
+dependencies[] = googleanalytics
+
+; styles
+dependencies[] = styles
+dependencies[] = styles_ui
+dependencies[] = file_styles
+
+; theme tools
+;dependencies[] = delta
+;dependencies[] = delta_blocks
+;dependencies[] = delta_ui
+;dependencies[] = omega_tools
+
+
+; user interface
+dependencies[] = imce_wysiwyg
+; dependencies[] = jquery_update
+; dependencies[] = superfish
+dependencies[] = wysiwyg
+
+; views
+dependencies[] = views
+dependencies[] = views_ui
+;dependencies[] = views_bulk_operations
+
+
+files[] = barony_base.profile

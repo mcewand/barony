@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+
+function barony_install() {
+  // Set the admin theme
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'rubik')
+    ->execute();
+  variable_set('node_admin_theme', '1');
+  variable_set('admin_theme', 'rubik');
+
+}
