@@ -247,9 +247,16 @@ function barony_events_views_default_views() {
   $handler->display->display_options['style_options']['multiday_theme'] = '1';
   $handler->display->display_options['style_options']['theme_style'] = '1';
   $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['style_options']['groupby_times'] = 'half';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'barony_event_announce' => '#ffffff',
+    'barony_announcement' => '#ffffff',
+    'barony_office' => '#ffffff',
+    'barony_page' => '#ffffff',
+  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
