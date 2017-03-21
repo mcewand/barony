@@ -28,7 +28,7 @@ dependencies[] = toolbar
 
 ; Calendars
 dependencies[] = calendar
-dependencies[] = jquery_calendar
+;dependencies[] = jquery_calendar
 
 ; chaos tools
 dependencies[] = ctools
@@ -90,4 +90,4 @@ dependencies[] = views_ui
 ;dependencies[] = views_bulk_operations
 
 
-files[] = barony_base.profile
+files[] = barony.profile
