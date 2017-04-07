@@ -15,3 +15,21 @@ function barony_core_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
 }
+
+/**
+ * Implements hook_node_info().
+ */
+function barony_core_node_info() {
+  $items = array(
+    'barony_page' => array(
+      'name' => t('Page'),
+      'base' => 'node_content',
+      'description' => t('Basic informational pages'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
+}

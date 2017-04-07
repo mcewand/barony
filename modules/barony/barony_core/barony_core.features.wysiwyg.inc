@@ -39,6 +39,9 @@ function barony_core_wysiwyg_default_profiles() {
           'FontSize' => 1,
           'Styles' => 1,
         ),
+        'imce' => array(
+          'imce' => 1,
+        ),
       ),
       'theme' => '',
       'language' => 'en',
@@ -49,7 +52,7 @@ function barony_core_wysiwyg_default_profiles() {
       'acf_mode' => 0,
       'acf_allowed_content' => '',
       'css_setting' => 'theme',
-      'css_theme' => 'bartik',
+      'css_theme' => 'wyiswyg_theme_default',
       'css_path' => '',
       'stylesSet' => '',
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
