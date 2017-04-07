@@ -21,9 +21,10 @@ function barony_events_field_group_info() {
   $field_group->parent_name = 'group_navigation';
   $field_group->data = array(
     'label' => 'Activities',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_event_activity',
+      1 => 'field_event_activities_overview',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -51,6 +52,7 @@ function barony_events_field_group_info() {
     'weight' => '9',
     'children' => array(
       0 => 'field_event_activity',
+      1 => 'field_event_activities_overview',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -78,6 +80,7 @@ function barony_events_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_event_autocrats',
+      1 => 'field_event_contact_overview',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -102,9 +105,10 @@ function barony_events_field_group_info() {
   $field_group->parent_name = 'group_navigation';
   $field_group->data = array(
     'label' => 'Contacts',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_event_autocrats',
+      1 => 'field_event_contact_overview',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -159,6 +163,7 @@ function barony_events_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'field_event_alcohol_policy',
+      1 => 'field_event_info_overview',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -219,6 +224,7 @@ function barony_events_field_group_info() {
       3 => 'field_event_state',
       4 => 'field_event_zip_code',
       5 => 'field_event_directions',
+      6 => 'field_event_travel_overview',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -251,6 +257,7 @@ function barony_events_field_group_info() {
       3 => 'group_contact',
       4 => 'group_site',
       5 => 'group_activities',
+      6 => 'group_schedule',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -278,6 +285,7 @@ function barony_events_field_group_info() {
     'children' => array(
       0 => 'field_event_prereg',
       1 => 'field_event_fees',
+      2 => 'field_event_reg_overview',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -306,6 +314,7 @@ function barony_events_field_group_info() {
     'children' => array(
       0 => 'field_event_prereg',
       1 => 'field_event_fees',
+      2 => 'field_event_reg_overview',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -313,6 +322,60 @@ function barony_events_field_group_info() {
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups[''] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_schedule|node|barony_event|default';
+  $field_group->group_name = 'group_schedule';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'barony_event';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_navigation';
+  $field_group->data = array(
+    'label' => 'Schedule',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_event_schedule_overview',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-schedule field-group-htab',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups[''] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_schedule|node|barony_event|form';
+  $field_group->group_name = 'group_schedule';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'barony_event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Schedule',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_event_schedule_overview',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-schedule field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -333,6 +396,7 @@ function barony_events_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_event_alcohol_policy',
+      1 => 'field_event_info_overview',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -385,7 +449,7 @@ function barony_events_field_group_info() {
   $field_group->parent_name = 'group_navigation';
   $field_group->data = array(
     'label' => 'Travel',
-    'weight' => '7',
+    'weight' => '10',
     'children' => array(
       0 => 'field_event_site_name',
       1 => 'field_events_address',
@@ -393,6 +457,7 @@ function barony_events_field_group_info() {
       3 => 'field_event_state',
       4 => 'field_event_zip_code',
       5 => 'field_event_directions',
+      6 => 'field_event_travel_overview',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -417,6 +482,7 @@ function barony_events_field_group_info() {
   t('Location');
   t('Navigation');
   t('Registration');
+  t('Schedule');
   t('Site');
   t('Teaser');
   t('Travel');

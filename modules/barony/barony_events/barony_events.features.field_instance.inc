@@ -10,6 +10,47 @@
 function barony_events_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance:
+  // 'node-barony_event-field_event_activities_overview'.
+  $field_instances['node-barony_event-field_event_activities_overview'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'General information that will appear on the "Activities" tab.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_activities_overview',
+    'label' => 'Activities Overview',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 26,
+    ),
+  );
+
   // Exported field_instance: 'node-barony_event-field_event_activity'.
   $field_instances['node-barony_event-field_event_activity'] = array(
     'bundle' => 'barony_event',
@@ -24,7 +65,7 @@ function barony_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 6,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -59,7 +100,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 10,
+      'weight' => 27,
     ),
   );
 
@@ -75,7 +116,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 7,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -96,7 +137,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 19,
     ),
   );
 
@@ -114,7 +155,7 @@ function barony_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -145,7 +186,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 13,
+      'weight' => 24,
     ),
   );
 
@@ -161,7 +202,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -186,6 +227,46 @@ function barony_events_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-barony_event-field_event_contact_overview'.
+  $field_instances['node-barony_event-field_event_contact_overview'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'General information which will appear on the "Contact" tab.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_contact_overview',
+    'label' => 'Contact Overview',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 25,
     ),
   );
 
@@ -259,7 +340,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -301,7 +382,7 @@ function barony_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 5,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -334,7 +415,47 @@ function barony_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 15,
+      'weight' => 22,
+    ),
+  );
+
+  // Exported field_instance: 'node-barony_event-field_event_info_overview'.
+  $field_instances['node-barony_event-field_event_info_overview'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'General text that will appear on the "Info" tab.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_info_overview',
+    'label' => 'Info Overview',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 18,
     ),
   );
 
@@ -392,7 +513,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -416,7 +537,87 @@ function barony_events_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-barony_event-field_event_reg_overview'.
+  $field_instances['node-barony_event-field_event_reg_overview'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'General information that will appear on the "Registration" tab.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_reg_overview',
+    'label' => 'Registration Overview',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-barony_event-field_event_schedule_overview'.
+  $field_instances['node-barony_event-field_event_schedule_overview'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'General information that will appear on the "Schedule" tab.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_schedule_overview',
+    'label' => 'Schedule Overview',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 28,
     ),
   );
 
@@ -432,7 +633,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -472,7 +673,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -587,6 +788,46 @@ function barony_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-barony_event-field_event_travel_overview'.
+  $field_instances['node-barony_event-field_event_travel_overview'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'General text that will appear at the top of the "Travel" tab.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_travel_overview',
+    'label' => 'Travel Overview',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-barony_event-field_event_zip_code'.
   $field_instances['node-barony_event-field_event_zip_code'] = array(
     'bundle' => 'barony_event',
@@ -604,7 +845,7 @@ function barony_events_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_integer',
-        'weight' => 4,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -645,7 +886,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1094,6 +1335,7 @@ function barony_events_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Activities Overview');
   t('Activity');
   t('Address');
   t('Alcohol Policy');
@@ -1101,22 +1343,33 @@ function barony_events_field_default_field_instances() {
   t('Autocrats');
   t('Body');
   t('City');
+  t('Contact Overview');
   t('Date');
   t('Date and Time');
   t('Description');
   t('Directions');
   t('Email');
   t('Fees');
+  t('General information that will appear on the "Activities" tab.');
+  t('General information that will appear on the "Registration" tab.');
+  t('General information that will appear on the "Schedule" tab.');
+  t('General information which will appear on the "Contact" tab.');
+  t('General text that will appear at the top of the "Travel" tab.');
+  t('General text that will appear on the "Info" tab.');
   t('Image that will accompany this in lists.');
+  t('Info Overview');
   t('Long Description');
   t('Name and Title');
   t('Preregistration Info');
+  t('Registration Overview');
   t('Role');
+  t('Schedule Overview');
   t('Site Name');
   t('State');
   t('Teaser Image');
   t('Teaser text');
   t('This should be usable for social media (aka, 140 characters or less)');
+  t('Travel Overview');
   t('Type');
   t('Zip Code');
 
