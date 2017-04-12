@@ -3,6 +3,8 @@ description = A starter profile for baronial websites for the Society for Creati
 core = 7.x
 version = 7.x-0.1
 
+; Barony Core
+dependencies[] = barony_core
 
 ; Core
 dependencies[] = block
@@ -55,10 +57,12 @@ dependencies[] = imce_wysiwyg
 dependencies[] = nodequeue
 
 ; other
+dependencies[] = admin_menu
 ;dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entitycache
 dependencies[] = libraries
+dependencies[] = menu_filter
 dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = token
