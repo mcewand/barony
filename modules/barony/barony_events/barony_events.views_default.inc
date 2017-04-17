@@ -147,137 +147,8 @@ function barony_events_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
-  /* Display: Month */
-  $handler = $view->new_display('page', 'Month', 'page_1');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'date_views_pager';
-  $handler->display->display_options['pager']['options']['date_id'] = 'month';
-  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'calendar_style';
-  $handler->display->display_options['style_options']['name_size'] = '3';
-  $handler->display->display_options['style_options']['mini'] = '0';
-  $handler->display->display_options['style_options']['with_weekno'] = '0';
-  $handler->display->display_options['style_options']['multiday_theme'] = '1';
-  $handler->display->display_options['style_options']['theme_style'] = '1';
-  $handler->display->display_options['style_options']['max_items'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'calendar_entity';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
-    'barony_event_announce' => '#ffffff',
-    'barony_office' => '#ffffff',
-    'barony_page' => '#ffffff',
-  );
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Date: Date (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
-  );
-  $handler->display->display_options['path'] = 'events';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Events';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['type'] = 'normal';
-  $handler->display->display_options['tab_options']['title'] = 'Calendar';
-  $handler->display->display_options['tab_options']['weight'] = '0';
-
-  /* Display: Week */
-  $handler = $view->new_display('page', 'Week', 'page_2');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'date_views_pager';
-  $handler->display->display_options['pager']['options']['date_id'] = 'week';
-  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'calendar_style';
-  $handler->display->display_options['style_options']['calendar_type'] = 'week';
-  $handler->display->display_options['style_options']['name_size'] = '3';
-  $handler->display->display_options['style_options']['mini'] = '0';
-  $handler->display->display_options['style_options']['with_weekno'] = '0';
-  $handler->display->display_options['style_options']['multiday_theme'] = '1';
-  $handler->display->display_options['style_options']['theme_style'] = '1';
-  $handler->display->display_options['style_options']['max_items'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'calendar_entity';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Date: Date (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['granularity'] = 'week';
-  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
-  );
-  $handler->display->display_options['path'] = 'events/week';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Week';
-  $handler->display->display_options['menu']['weight'] = '2';
-  $handler->display->display_options['menu']['context'] = 0;
-
-  /* Display: Day */
-  $handler = $view->new_display('page', 'Day', 'page_3');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'date_views_pager';
-  $handler->display->display_options['pager']['options']['date_id'] = 'day';
-  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'calendar_style';
-  $handler->display->display_options['style_options']['calendar_type'] = 'day';
-  $handler->display->display_options['style_options']['name_size'] = '3';
-  $handler->display->display_options['style_options']['mini'] = '0';
-  $handler->display->display_options['style_options']['with_weekno'] = '0';
-  $handler->display->display_options['style_options']['multiday_theme'] = '1';
-  $handler->display->display_options['style_options']['theme_style'] = '1';
-  $handler->display->display_options['style_options']['max_items'] = '0';
-  $handler->display->display_options['style_options']['groupby_times'] = 'half';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'calendar_entity';
-  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
-    'barony_event_announce' => '#ffffff',
-    'barony_announcement' => '#ffffff',
-    'barony_office' => '#ffffff',
-    'barony_page' => '#ffffff',
-  );
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Date: Date (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
-  );
-  $handler->display->display_options['path'] = 'events/day';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Day';
-  $handler->display->display_options['menu']['weight'] = '3';
-  $handler->display->display_options['menu']['context'] = 0;
-
   /* Display: Year */
-  $handler = $view->new_display('page', 'Year', 'page');
+  $handler = $view->new_display('page', 'Year', 'events_year');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'year';
@@ -335,21 +206,155 @@ function barony_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
   );
-  $handler->display->display_options['path'] = 'events/year';
+  $handler->display->display_options['path'] = 'calendars/year';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Year';
-  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-barony-calendars';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
+  /* Display: Month */
+  $handler = $view->new_display('page', 'Month', 'events_month');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
-  $handler->display->display_options['pager']['options']['date_id'] = 'mini';
+  $handler->display->display_options['pager']['options']['date_id'] = 'month';
   $handler->display->display_options['pager']['options']['link_format'] = 'clean';
-  $handler->display->display_options['pager']['options']['skip_empty_pages'] = 0;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'calendar_style';
+  $handler->display->display_options['style_options']['name_size'] = '3';
+  $handler->display->display_options['style_options']['mini'] = '0';
+  $handler->display->display_options['style_options']['with_weekno'] = '0';
+  $handler->display->display_options['style_options']['multiday_theme'] = '1';
+  $handler->display->display_options['style_options']['theme_style'] = '1';
+  $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'barony_event_announce' => '#ffffff',
+    'barony_office' => '#ffffff',
+    'barony_page' => '#ffffff',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
+  );
+  $handler->display->display_options['path'] = 'calendars/month';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'Month';
+  $handler->display->display_options['menu']['weight'] = '1';
+  $handler->display->display_options['menu']['name'] = 'menu-barony-calendars';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'normal';
+  $handler->display->display_options['tab_options']['title'] = 'Calendar';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+  $handler->display->display_options['tab_options']['name'] = 'menu-barony-calendars';
+
+  /* Display: Week */
+  $handler = $view->new_display('page', 'Week', 'events_week');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'date_views_pager';
+  $handler->display->display_options['pager']['options']['date_id'] = 'week';
+  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'calendar_style';
+  $handler->display->display_options['style_options']['calendar_type'] = 'week';
+  $handler->display->display_options['style_options']['name_size'] = '3';
+  $handler->display->display_options['style_options']['mini'] = '0';
+  $handler->display->display_options['style_options']['with_weekno'] = '0';
+  $handler->display->display_options['style_options']['multiday_theme'] = '1';
+  $handler->display->display_options['style_options']['theme_style'] = '1';
+  $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['granularity'] = 'week';
+  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
+  );
+  $handler->display->display_options['path'] = 'calendars/week';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Week';
+  $handler->display->display_options['menu']['weight'] = '2';
+  $handler->display->display_options['menu']['name'] = 'menu-barony-calendars';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Day */
+  $handler = $view->new_display('page', 'Day', 'events_day');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'date_views_pager';
+  $handler->display->display_options['pager']['options']['date_id'] = 'day';
+  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'calendar_style';
+  $handler->display->display_options['style_options']['calendar_type'] = 'day';
+  $handler->display->display_options['style_options']['name_size'] = '3';
+  $handler->display->display_options['style_options']['mini'] = '0';
+  $handler->display->display_options['style_options']['with_weekno'] = '0';
+  $handler->display->display_options['style_options']['multiday_theme'] = '1';
+  $handler->display->display_options['style_options']['theme_style'] = '1';
+  $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['style_options']['groupby_times'] = 'half';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'barony_event_announce' => '#ffffff',
+    'barony_announcement' => '#ffffff',
+    'barony_office' => '#ffffff',
+    'barony_page' => '#ffffff',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
+  );
+  $handler->display->display_options['path'] = 'calendars/day';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Day';
+  $handler->display->display_options['menu']['weight'] = '3';
+  $handler->display->display_options['menu']['name'] = 'menu-barony-calendars';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Homepage Block */
+  $handler = $view->new_display('block', 'Homepage Block', 'homepage_block');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = '/events';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'calendar_style';
   $handler->display->display_options['style_options']['name_size'] = '1';
@@ -370,16 +375,21 @@ function barony_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['granularity_reset'] = 0;
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
   );
 
   /* Display: Upcoming */
-  $handler = $view->new_display('block', 'Upcoming', 'block_2');
+  $handler = $view->new_display('block', 'Upcoming', 'upcoming_events');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Upcoming Activities';
   $handler->display->display_options['display_description'] = 'Upcoming events block';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'events_month';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -417,6 +427,7 @@ function barony_events_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_s_date_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_s_date_1']['multi_type'] = 'ul';
   /* Field: Time */
   $handler->display->display_options['fields']['field_s_date']['id'] = 'field_s_date';
   $handler->display->display_options['fields']['field_s_date']['table'] = 'field_data_field_s_date';
@@ -436,6 +447,20 @@ function barony_events_views_default_views() {
   );
   $handler->display->display_options['fields']['field_s_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_s_date']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Date -  start date (field_s_date) */
+  $handler->display->display_options['arguments']['field_s_date_value']['id'] = 'field_s_date_value';
+  $handler->display->display_options['arguments']['field_s_date_value']['table'] = 'field_data_field_s_date';
+  $handler->display->display_options['arguments']['field_s_date_value']['field'] = 'field_s_date_value';
+  $handler->display->display_options['arguments']['field_s_date_value']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['field_s_date_value']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['field_s_date_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_s_date_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_s_date_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_s_date_value']['granularity'] = 'day';
+  $handler->display->display_options['arguments']['field_s_date_value']['granularity_reset'] = 0;
+  $handler->display->display_options['arguments']['field_s_date_value']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['field_s_date_value']['use_fromto'] = 'no';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -455,6 +480,46 @@ function barony_events_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_s_date.field_s_date_value' => 'field_data_field_s_date.field_s_date_value',
   );
+
+  /* Display: Featured */
+  $handler = $view->new_display('block', 'Featured', 'featured_event');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Featured Event';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'barony_event' => 'barony_event',
+  );
+  /* Filter criterion: Content: Sticky */
+  $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['table'] = 'node';
+  $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['value'] = '1';
   $export['barony_events_calendar'] = $view;
 
   return $export;

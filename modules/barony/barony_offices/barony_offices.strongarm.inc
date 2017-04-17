@@ -41,7 +41,7 @@ function barony_offices_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '6',
         ),
       ),
       'display' => array(),

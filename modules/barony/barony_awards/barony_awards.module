@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Awards feature.
+ */
+
+include_once 'barony_awards.features.inc';

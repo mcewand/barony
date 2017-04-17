@@ -120,21 +120,21 @@ function barony_core_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Welcome to Caerthe!';
   $display->uuid = '9db76fde-2095-4f6e-a1a9-04c4af1819ed';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_barony_homepage__panel';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-88366a13-a8e5-4b98-8dc9-dff59a9f259d';
+  $pane->pid = 'new-ca42bc25-6a65-4af6-92ba-604107b08196';
   $pane->panel = 'calendar';
   $pane->type = 'block';
-  $pane->subtype = 'views-barony_events_calendar-block_1';
+  $pane->subtype = 'views-3a2d22b18925f65e79f66192c1412207';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
@@ -146,9 +146,9 @@ function barony_core_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '88366a13-a8e5-4b98-8dc9-dff59a9f259d';
-  $display->content['new-88366a13-a8e5-4b98-8dc9-dff59a9f259d'] = $pane;
-  $display->panels['calendar'][0] = 'new-88366a13-a8e5-4b98-8dc9-dff59a9f259d';
+  $pane->uuid = 'ca42bc25-6a65-4af6-92ba-604107b08196';
+  $display->content['new-ca42bc25-6a65-4af6-92ba-604107b08196'] = $pane;
+  $display->panels['calendar'][0] = 'new-ca42bc25-6a65-4af6-92ba-604107b08196';
   $pane = new stdClass();
   $pane->pid = 'new-b273da2b-a296-4eee-bf77-d24f38e28178';
   $pane->panel = 'calendar';
@@ -186,8 +186,8 @@ function barony_core_default_page_manager_pages() {
     'identifier' => '',
     'build_mode' => 'full',
     'link_node_title' => 0,
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => '<none>',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
