@@ -281,6 +281,25 @@ function barony_events_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_event_feast'.
+  $field_bases['field_event_feast'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_feast',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_event_fee_amount'.
   $field_bases['field_event_fee_amount'] = array(
     'active' => 1,
@@ -373,6 +392,21 @@ function barony_events_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_event_member_discount'.
+  $field_bases['field_event_member_discount'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_member_discount',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_event_prereg'.

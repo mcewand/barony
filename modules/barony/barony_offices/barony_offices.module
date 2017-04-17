@@ -5,3 +5,21 @@
  */
 
 include_once 'barony_offices.features.inc';
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function barony_offices_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['summary'] = array(
+    'label' => t('Summary'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['node']['view modes']['main_page_left'] = array(
+    'label' => t('Main - Left'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['node']['view modes']['main_page_right'] = array(
+    'label' => t('Main - Right'),
+    'custom settings' => TRUE,
+  );
+}

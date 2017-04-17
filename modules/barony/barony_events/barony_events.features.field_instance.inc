@@ -23,7 +23,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -47,7 +47,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 20,
     ),
   );
 
@@ -65,7 +65,7 @@ function barony_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 16,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -100,7 +100,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 27,
+      'weight' => 21,
     ),
   );
 
@@ -116,7 +116,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 13,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -137,7 +137,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 19,
+      'weight' => 15,
     ),
   );
 
@@ -155,7 +155,7 @@ function barony_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 3,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -186,7 +186,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 24,
+      'weight' => 19,
     ),
   );
 
@@ -202,7 +202,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -226,7 +226,7 @@ function barony_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -242,7 +242,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -266,7 +266,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 20,
     ),
   );
 
@@ -289,7 +289,7 @@ function barony_events_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -324,7 +324,7 @@ function barony_events_field_default_field_instances() {
         'year_range' => '-0:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -340,7 +340,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -364,7 +364,47 @@ function barony_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-barony_event-field_event_feast'.
+  $field_instances['node-barony_event-field_event_feast'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_feast',
+    'label' => 'Feast',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
     ),
   );
 
@@ -382,7 +422,7 @@ function barony_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 15,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -415,7 +455,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 22,
+      'weight' => 18,
     ),
   );
 
@@ -431,7 +471,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -455,7 +495,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 14,
     ),
   );
 
@@ -471,7 +511,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -501,6 +541,52 @@ function barony_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-barony_event-field_event_member_discount'.
+  $field_instances['node-barony_event-field_event_member_discount'] = array(
+    'bundle' => 'barony_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_member_discount',
+    'label' => 'Member Discount',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '-$',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 19,
+    ),
+  );
+
   // Exported field_instance: 'node-barony_event-field_event_prereg'.
   $field_instances['node-barony_event-field_event_prereg'] = array(
     'bundle' => 'barony_event',
@@ -513,7 +599,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -537,7 +623,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 17,
     ),
   );
 
@@ -553,7 +639,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -577,7 +663,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 16,
     ),
   );
 
@@ -593,7 +679,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -617,7 +703,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 28,
+      'weight' => 21,
     ),
   );
 
@@ -629,11 +715,11 @@ function barony_events_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -657,7 +743,7 @@ function barony_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -673,7 +759,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 17,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -694,7 +780,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -708,7 +794,7 @@ function barony_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -744,7 +830,7 @@ function barony_events_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -759,7 +845,7 @@ function barony_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -784,7 +870,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -800,7 +886,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -824,7 +910,7 @@ function barony_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -845,7 +931,7 @@ function barony_events_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_integer',
-        'weight' => 18,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -870,7 +956,7 @@ function barony_events_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -886,7 +972,7 @@ function barony_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -910,7 +996,7 @@ function barony_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -1349,6 +1435,7 @@ function barony_events_field_default_field_instances() {
   t('Description');
   t('Directions');
   t('Email');
+  t('Feast');
   t('Fees');
   t('General information that will appear on the "Activities" tab.');
   t('General information that will appear on the "Registration" tab.');
@@ -1359,6 +1446,7 @@ function barony_events_field_default_field_instances() {
   t('Image that will accompany this in lists.');
   t('Info Overview');
   t('Long Description');
+  t('Member Discount');
   t('Name and Title');
   t('Preregistration Info');
   t('Registration Overview');

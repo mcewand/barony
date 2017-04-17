@@ -22,7 +22,26 @@ function barony_offices_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
+      ),
+      'main_page_left' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'summary' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -48,7 +67,7 @@ function barony_offices_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 10,
+      'weight' => 3,
     ),
   );
 
@@ -63,10 +82,28 @@ function barony_offices_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,
+      ),
+      'main_page_left' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -102,7 +139,7 @@ function barony_offices_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -118,7 +155,26 @@ function barony_offices_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 5,
+        'weight' => 6,
+      ),
+      'main_page_left' => array(
+        'label' => 'hidden',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 3,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -146,45 +202,6 @@ function barony_offices_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-barony_office-field_office_officer'.
-  $field_instances['node-barony_office-field_office_officer'] = array(
-    'bundle' => 'barony_office',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_office_officer',
-    'label' => 'Officer',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-barony_office-field_office_officer_mundane'.
   $field_instances['node-barony_office-field_office_officer_mundane'] = array(
     'bundle' => 'barony_office',
@@ -197,7 +214,26 @@ function barony_offices_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'main_page_left' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 2,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -222,7 +258,7 @@ function barony_offices_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 11,
     ),
   );
 
@@ -238,6 +274,25 @@ function barony_offices_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'main_page_left' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -263,7 +318,7 @@ function barony_offices_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 10,
     ),
   );
 
@@ -279,7 +334,26 @@ function barony_offices_field_default_field_instances() {
         'module' => 'phone',
         'settings' => array(),
         'type' => 'phone',
-        'weight' => 3,
+        'weight' => 4,
+      ),
+      'main_page_left' => array(
+        'label' => 'hidden',
+        'module' => 'phone',
+        'settings' => array(),
+        'type' => 'phone',
+        'weight' => 4,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -306,7 +380,7 @@ function barony_offices_field_default_field_instances() {
       'module' => 'phone',
       'settings' => array(),
       'type' => 'phone_textfield',
-      'weight' => 7,
+      'weight' => 13,
     ),
   );
 
@@ -322,7 +396,26 @@ function barony_offices_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
+      ),
+      'main_page_left' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -347,7 +440,155 @@ function barony_offices_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-barony_office-field_office_picture'.
+  $field_instances['node-barony_office-field_office_picture'] = array(
+    'bundle' => 'barony_office',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'main_page_left' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_office_picture',
+    'label' => 'Picture',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'file_directory' => 'office/officers',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-barony_office-field_office_resources'.
+  $field_instances['node-barony_office-field_office_resources'] = array(
+    'bundle' => 'barony_office',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 9,
+      ),
+      'main_page_left' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'main_page_right' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 0,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_office_resources',
+    'label' => 'Resources',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'event_activities' => -1,
+        'event_autocrat' => -1,
+        'event_fees' => -1,
+        'officer_resources' => 'officer_resources',
+      ),
+      'bundle_weights' => array(
+        'event_activities' => 2,
+        'event_autocrat' => 3,
+        'event_fees' => 4,
+        'officer_resources' => 5,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Resource',
+      'title_multiple' => 'Resources',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 7,
     ),
   );
 
@@ -362,7 +603,25 @@ function barony_offices_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'main_page_left' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 7,
+      ),
+      'main_page_right' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'summary' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -387,7 +646,102 @@ function barony_offices_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-officer_resources-field_office_resource_link'.
+  $field_instances['paragraphs_item-officer_resources-field_office_resource_link'] = array(
+    'bundle' => 'officer_resources',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_office_resource_link',
+    'label' => 'Link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'rel_remove_internal',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-officer_resources-field_office_resource_type'.
+  $field_instances['paragraphs_item-officer_resources-field_office_resource_type'] = array(
+    'bundle' => 'officer_resources',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_office_resource_type',
+    'label' => 'Link Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
@@ -396,13 +750,16 @@ function barony_offices_field_default_field_instances() {
   t('Badge');
   t('Brief description of the office that will be used on the office list page.');
   t('Email');
+  t('Link');
+  t('Link Type');
   t('Long Description and Links');
   t('Notes that will appear with the phone number (e.g. "No calls after 9.")');
-  t('Officer');
   t('Officer Name (SCA)');
   t('Officer Name (mundane)');
   t('Phone');
   t('Phone Notes');
+  t('Picture');
+  t('Resources');
   t('Short Description');
 
   return $field_instances;

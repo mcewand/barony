@@ -88,7 +88,7 @@ function barony_events_default_page_manager_pages() {
   $pane->panel = 'left';
   $pane->type = 'block';
   $pane->subtype = 'views-a3416f1733f0e094ec05c98e8034405c';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -136,7 +136,7 @@ function barony_events_default_page_manager_pages() {
   $pages['barony_events'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'barony_upcoming';
   $page->task = 'page';

@@ -34,6 +34,15 @@ function barony_events_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'summary' => array(
+        'custom_settings' => FALSE,
+      ),
+      'main_page_left' => array(
+        'custom_settings' => FALSE,
+      ),
+      'main_page_right' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -71,6 +80,18 @@ function barony_events_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'summary' => array(
+        'custom_settings' => FALSE,
+      ),
+      'main_page_left' => array(
+        'custom_settings' => FALSE,
+      ),
+      'main_page_right' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),

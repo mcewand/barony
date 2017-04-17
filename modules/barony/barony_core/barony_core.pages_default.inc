@@ -120,7 +120,7 @@ function barony_core_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Welcome to Caerthe!';
   $display->uuid = '9db76fde-2095-4f6e-a1a9-04c4af1819ed';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_barony_homepage__panel';
@@ -186,8 +186,8 @@ function barony_core_default_page_manager_pages() {
     'identifier' => '',
     'build_mode' => 'full',
     'link_node_title' => 0,
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => '<none>',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
