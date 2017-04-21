@@ -85,7 +85,10 @@ function barony_awards_views_default_views() {
 
   /* Display: Awards Overview page */
   $handler = $view->new_display('page', 'Awards Overview page', 'awards_overview_page');
-  $handler->display->display_options['path'] = 'awards';
+  $handler->display->display_options['path'] = 'awards-list';
+
+  /* Display: Awards Block */
+  $handler = $view->new_display('block', 'Awards Block', 'block_1');
   $export['barony_awards'] = $view;
 
   return $export;

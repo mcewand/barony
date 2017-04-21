@@ -26,6 +26,7 @@ features[field_instance][] = node-barony_award-field_award_description
 features[menu_links][] = main-menu_awards:awards
 features[node][] = barony_award
 features[page_manager_handlers][] = node_view__award-page
+features[page_manager_pages][] = barony_awards
 features[variable][] = field_bundle_settings_node__barony_award
 features[variable][] = menu_options_barony_award
 features[variable][] = menu_parent_barony_award
