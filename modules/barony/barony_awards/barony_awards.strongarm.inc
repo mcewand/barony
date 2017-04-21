@@ -34,6 +34,18 @@ function barony_awards_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'summary' => array(
+        'custom_settings' => TRUE,
+      ),
+      'main_page_left' => array(
+        'custom_settings' => TRUE,
+      ),
+      'main_page_right' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

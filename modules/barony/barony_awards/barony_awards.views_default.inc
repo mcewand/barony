@@ -29,9 +29,13 @@ function barony_awards_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_award_badge' => 'field_award_badge',
+    'field_award_description' => 'field_award_description',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -39,6 +43,26 @@ function barony_awards_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Badge */
+  $handler->display->display_options['fields']['field_award_badge']['id'] = 'field_award_badge';
+  $handler->display->display_options['fields']['field_award_badge']['table'] = 'field_data_field_award_badge';
+  $handler->display->display_options['fields']['field_award_badge']['field'] = 'field_award_badge';
+  $handler->display->display_options['fields']['field_award_badge']['label'] = '';
+  $handler->display->display_options['fields']['field_award_badge']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_award_badge']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_award_badge']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_award_badge']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_award_description']['id'] = 'field_award_description';
+  $handler->display->display_options['fields']['field_award_description']['table'] = 'field_data_field_award_description';
+  $handler->display->display_options['fields']['field_award_description']['field'] = 'field_award_description';
+  $handler->display->display_options['fields']['field_award_description']['label'] = '';
+  $handler->display->display_options['fields']['field_award_description']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
