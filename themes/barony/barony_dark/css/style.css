@@ -1,0 +1,346 @@
+
+h1,
+#navbar a.name {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 300%;
+  font-weight: normal;
+  letter-spacing: .1em;
+}
+
+h2 {
+  font-family: 'Metamorphous', serif;
+}
+
+body.navbar-is-fixed-top,
+body.admin-menu.navbar-is-fixed-top {
+	padding-top: 110px;
+}
+
+#navbar {
+  background-image: url('/sites/default/files/aspenleafdark.jpg');
+  background-position: center;
+  top: 0;
+  height: 110px;
+  padding-top: 30px;
+}
+
+#navbar a.name {
+	color: #cccccc;
+}
+
+#navbar-collapse {
+	float: right;
+}
+
+#navbar .navbar-location {
+	margin-left: 50px;
+	color: #b3b3b3;
+	font-size: 120%;
+}
+
+.navbar-location:before,
+.navbar-location:after {
+  clear: both;
+}
+
+.navbar-default {
+	-webkit-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
+  border: none;
+}
+
+
+body {
+	/*background: linear-gradient(#b3b3b3, white);*/
+  /*background: linear-gradient(#64644c, white);*/
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90%; /* or 950px */
+}
+
+
+/* Primary Menu
+/-------------------------------------------------------------- */
+/*
+#block-superfish-1 {
+  margin: 0;
+  width: auto;
+}
+
+#block-superfish-1.block {
+  margin: 0 10px;
+  overflow: visible;
+  position: relative;
+  z-index: 101;
+}
+*/
+
+#block-superfish-1.block .menu {
+  margin: 10px 10px 0 0;
+}
+
+
+ul#superfish-1 {
+  font-size: 150%;
+  float: right;
+}
+
+ul#superfish-1.menu li,
+ul#superfish-1.sf-menu li {
+  display: block;
+  float: left;
+  margin: 0 0 0 5px;
+  padding: 0;
+  position: relative;
+}
+
+ul#superfish-1.menu li a:link,
+ul#superfish-1.menu li a:visited,
+ul#superfish-1.sf-menu li a:link,
+ul#superfish-1.sf-menu li a:visited {
+  color: #999;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 10px;
+  text-decoration: none;
+}
+
+ul#superfish-1.menu li a:hover,
+ul#superfish-1.menu li a:focus,
+ul#superfish-1.menu li a:active,
+ul#superfish-1.sf-menu li a:hover,
+ul#superfish-1.sf-menu li a:focus,
+ul#superfish-1.sf-menu li a:active,
+ul#superfish-1 li.active-trail a:link,
+ul#superfish-1 li.active-trail a:visited {
+  color: #fff;
+}
+
+/* Hovers for parent menu item */
+ul#superfish-1.menu li a:hover,
+ul#superfish-1.menu li:hover a,
+ul#superfish-1.menu li.hover a,
+ul#superfish-1.sf-menu li a:hover,
+ul#superfish-1.sf-menu li:hover a,
+ul#superfish-1.sf-menu li.hover a,
+ul#superfish-1.sf-menu li.active-trail a:link,
+ul#superfish-1.sf-menu li.active-trail a:visited {
+  background: #646464;
+  color: #fff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+/* Second level */
+ul#superfish-1.sf-menu li:hover ul,
+ul#superfish-1.sf-menu li.hover ul,
+ul#superfish-1.sf-menu li.sfHover ul {
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 75%;
+  margin: 0;
+  padding: 0 0 4px 0;
+  position: absolute;
+  text-align: left;
+  text-transform: none;
+  z-index: 2;
+}
+
+ul#superfish-1.sf-menu li:hover ul li,
+ul#superfish-1.sf-menu li.hover ul li,
+ul#superfish-1.sf-menu li.sfHover ul li {
+  margin: 0;
+}
+
+ul#superfish-1.sf-menu li:hover ul li a:link,
+ul#superfish-1.sf-menu li:hover ul li a:visited,
+ul#superfish-1.sf-menu li.hover ul li a:link,
+ul#superfish-1.sf-menu li.hover ul li a:visited,
+ul#superfish-1.sf-menu li.sfHover ul li a:link,
+ul#superfish-1.sf-menu li.sfHover ul li a:visited {
+  background: #646464;
+  border-bottom: 1px solid #888;
+  margin-right: 0;
+  padding-left: 10px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+ul#superfish-1.sf-menu li:hover ul li.last a:link,
+ul#superfish-1.sf-menu li:hover ul li.last a:visited,
+ul#superfish-1.sf-menu li.hover ul li.last a:link,
+ul#superfish-1.sf-menu li.hover ul li.last a:visited,
+ul#superfish-1.sf-menu li.sfHover ul li.last a:link,
+ul#superfish-1.sf-menu li.sfHover ul li.last a:visited,
+ul#superfish-1.sf-menu li:hover ul li.firstandlast a:link,
+ul#superfish-1.sf-menu li:hover ul li.firstandlast a:visited,
+ul#superfish-1.sf-menu li.hover ul li.firstandlast a:link,
+ul#superfish-1.sf-menu li.hover ul li.firstandlast a:visited,
+ul#superfish-1.sf-menu li.sfHover ul li.firstandlast a:link,
+ul#superfish-1.sf-menu li.sfHover ul li.firstandlast a:visited {
+  border-bottom: none;
+  border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+}
+
+ul#superfish-1.sf-menu li:hover ul li.last a:link,
+ul#superfish-1.sf-menu li:hover ul li.last a:visited ,
+ul#superfish-1.sf-menu li.hover ul li.last a:link,
+ul#superfish-1.sf-menu li.hover ul li.last a:visited,
+ul#superfish-1.sf-menu li.sfHover ul li.last a:link,
+ul#superfish-1.sf-menu li.sfHover ul li.last a:visited {
+  border-bottom: 0;
+}
+
+ul#superfish-1.sf-menu li ul li a:link,
+ul#superfish-1.sf-menu li ul li a:visited {
+  background: #646464;
+  border-bottom: 1px solid #888;
+  margin-right: 5px;
+  padding-left: 10px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+ul#superfish-1.sf-menu li ul li a:hover {
+  color: #fff;
+}
+
+ul#superfish-1.sf-menu li ul li a.active {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+h2.block-title {
+  font-size: 153.8%; /* 20px/13px */ 
+}
+
+.node-teaser .field-type-image,
+.views-field-field-award-badge {
+  float: left;
+  margin-right: 10px;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+.item-list ul li.views-row {
+  list-style-type: none;
+  margin-bottom: 8px;
+}
+
+.block ul {
+  margin-left: 1em;
+}
+
+.block ul ul {
+  margin-left: 0;
+}
+.rhs h2 {
+  line-height: 30px;
+  font-size: 1.7em;
+  color: #dfb77c;
+}
+
+
+.rhs .date-heading h3 {
+  text-align: left;
+}
+
+.rhs .date-nav {
+  padding-bottom: 0px !important;
+}
+
+li.date-prev,
+li.date-next {
+  background: none repeat scroll 0 0 #000 !important;
+}
+
+.node-barony-event .horizontal-tabs {
+  border: none;
+}
+
+.node-barony-event ul.horizontal-tabs-list {
+  background-color: #292929;
+  border-right: none;
+}
+
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li {
+  background-color: #555;
+}
+
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li:hover a, 
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li:focus a {
+  color: #292929;
+  -webkit-border-top-left-radius: 7px;
+  -webkit-border-top-right-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  -moz-border-radius-topright: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li.selected {
+  background-color: #888;
+}
+
+.node-barony-event .horizontal-tabs .horizontal-tab-button {
+  -webkit-border-top-left-radius: 7px;
+  -webkit-border-top-right-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  -moz-border-radius-topright: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  }
+
+.node-barony-event .horizontal-tabs .horizontal-tabs-pane {
+  margin-top: 0;
+  padding: 30px 20px;
+}
+
+.group-travel .field-name-field-event-city {
+  float: left;
+  padding-right: 10px;
+}
+
+.group-travel .field-name-field-event-directions {
+  margin: 20px 0;
+}
+
+.field-name-field-event-prereg {
+  margin-bottom: 20px;
+}
+
+.paragraphs-item-event-fees div.terms {
+  background: none;
+  font-size: 107.6%; /* 14px/13px */
+  margin: 0;
+  padding: 0 15px 0 0;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+.paragraphs-item-event-fees .field-name-field-event-fee-type {
+  float: left;
+}
+
+.paragraphs-item-event-activities .field-name-field-event-activities-type ul li {
+  font-size: 1.7em;
+}
+
+
