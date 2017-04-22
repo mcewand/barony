@@ -28,6 +28,10 @@ body.admin-menu.navbar-is-fixed-top {
 	color: #cccccc;
 }
 
+#navbar a.logo img {
+	max-height: 85px;
+}
+
 #navbar-collapse {
 	float: right;
 }
@@ -36,11 +40,6 @@ body.admin-menu.navbar-is-fixed-top {
 	margin-left: 50px;
 	color: #b3b3b3;
 	font-size: 120%;
-}
-
-.navbar-location:before,
-.navbar-location:after {
-  clear: both;
 }
 
 .navbar-default {

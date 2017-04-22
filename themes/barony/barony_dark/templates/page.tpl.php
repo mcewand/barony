@@ -24,6 +24,9 @@
       <?php if (!empty($site_name)): ?>
         <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
+      <?php if (!empty($barony_header_location)): ?>
+        <div class="location navbar-location clearfix" ><?php print $barony_header_location; ?></div>
+      <?php endif; ?>
 
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -49,9 +52,6 @@
           <?php endif; ?>
         </nav>
       </div>
-    <?php endif; ?>
-    <?php if (!empty($barony_header_location)): ?>
-      <div class="location navbar-location clearfix" ><?php print $barony_header_location; ?></div>
     <?php endif; ?>
   </div>
 </header>
