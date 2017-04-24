@@ -43,6 +43,9 @@ function barony_events_strongarm() {
       'main_page_right' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

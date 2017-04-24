@@ -27,6 +27,45 @@ function barony_offices_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function barony_offices_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: barony_officer_list_page.
+  $styles['barony_officer_list_page'] = array(
+    'label' => 'Officer List Page',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 175,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: barony_small_badge.
+  $styles['barony_small_badge'] = array(
+    'label' => 'Small Badge (50x50)',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 50,
+          'height' => 50,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function barony_offices_node_info() {
