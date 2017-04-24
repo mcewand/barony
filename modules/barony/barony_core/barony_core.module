@@ -7,6 +7,13 @@
 include_once 'barony_core.features.inc';
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function barony_core_ctools_plugin_directory($module, $plugin) {
+  return 'plugins/' . $plugin;
+}
+
+/**
  * Implements hook_entity_info_alter().
  */
 function barony_core_entity_info_alter(&$entity_info) {
