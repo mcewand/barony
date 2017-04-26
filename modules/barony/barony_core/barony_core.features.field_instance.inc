@@ -324,7 +324,7 @@ function barony_core_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'resources',
-      'file_extensions' => 'txt doc docx xsl xslx ppt pptx pdf jpg jpeg png gif',
+      'file_extensions' => 'txt doc docx xls xlsx ppt pptx pdf jpg jpeg png gif',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -339,6 +339,53 @@ function barony_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-barony_resource-field_resource_tags'.
+  $field_instances['node-barony_resource-field_resource_tags'] = array(
+    'bundle' => 'barony_resource',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_resource_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add the page that this should redirect to.');
@@ -347,6 +394,7 @@ function barony_core_field_default_field_instances() {
   t('File');
   t('Image');
   t('Reference');
+  t('Tags');
   t('Text');
   t('This should be short - something that could fit in a Twitter post.');
 

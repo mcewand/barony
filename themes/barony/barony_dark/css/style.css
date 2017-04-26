@@ -115,8 +115,12 @@ body.admin-menu.navbar-is-fixed-top {
 }
 
 ul#superfish-1 {
-  font-size: 150%;
+  font-size: 130%;
   float: right;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 
 ul#superfish-1.menu li,
@@ -715,6 +719,17 @@ h2.block-title {
   -webkit-box-shadow: 1px 3px 3px 2px black;
   box-shadow: 1px 3px 3px 2px black;
 }
+
+/**
+ * Resources Panel, Page, etc
+ */
+.view-display-id-resources_block .views-row,
+.view-display-id-resources_page .views-row {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px grey solid;
+}
+
 
 /**
  * Make Google maps responsive
