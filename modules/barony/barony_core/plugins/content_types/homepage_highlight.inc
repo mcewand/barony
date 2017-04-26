@@ -56,23 +56,30 @@ function barony_core_homepage_highlight_content_type_render($subtype, $conf, $pa
  * Ctools configuration form callback.
  */
 function barony_core_homepage_highlight_content_type_edit_form($form, &$form_state) {
+  // Have to force the form inclusion, because ctools is different than the normal form API
   form_load_include($form_state, 'inc', 'barony_core','plugins/content_types/homepage_highlight');
   
   $form['#attributes']['enctype'] = array("multipart/form-data");
-
   form_load_include($form_state, 'inc', 'file', 'file.field');
 
   $conf = $form_state['conf'];
+
+  // Set the default file
+  if (!empty($conf['barony_homepage_highlight_image'])) {
+    $file_info = file_load($conf['barony_homepage_highlight_image']);
+    $file_default = isset($file_info->fid) ? $file_info->fid : NULL;
+  }
+  
   $form['barony_homepage_highlight_image'] = array(
     '#title' => t('Image'),
     '#type' => 'managed_file',
     '#description' => t('Upload a square image. This will be displayed at 150x150 px.'),
-    '#default_value' => !empty($conf['barony_homepage_highlight_image']) ? variable_get($conf['barony_homepage_highlight_image']) : '',
+    '#default_value' => isset($file_default) ? $file_default : NULL,
+    '#progress_indicator' => 'none',
     '#upload_location' => 'public://highlights/',
     '#upload_validators' => array(
-       'file_validate_extensions' => array('gif png jpeg jpg')
-     ),
-    '#array_parents' => array('barony_homepage_highlight_image')
+      'file_validate_extensions' => array('gif png jpeg jpg')
+    ),
   );
 
   $form['barony_homepage_highlight_links'] = array(
@@ -87,10 +94,6 @@ function barony_core_homepage_highlight_content_type_edit_form($form, &$form_sta
   );
 
 
-  //dpm($form, 'form');
-
-
-
   return $form;
 }
 
@@ -99,6 +102,8 @@ function barony_core_homepage_highlight_content_type_edit_form($form, &$form_sta
  */
 function barony_core_homepage_highlight_content_type_edit_form_submit(&$form, &$form_state) {
   foreach (element_children($form) as $key) {
-    $form_state['conf'][$key] = $form_state['values'][$key];
+    if (isset($form_state['values'][$key])) {
+      $form_state['conf'][$key] = $form_state['values'][$key];
+    }
   }
 }
