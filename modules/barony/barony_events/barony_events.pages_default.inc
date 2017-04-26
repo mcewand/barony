@@ -106,7 +106,7 @@ function barony_events_default_page_manager_pages() {
   $pane->panel = 'left';
   $pane->type = 'block';
   $pane->subtype = 'views-a3416f1733f0e094ec05c98e8034405c';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -147,6 +147,29 @@ function barony_events_default_page_manager_pages() {
   $pane->uuid = '5bf0481a-26e0-4c21-ad4b-a789b1de5b63';
   $display->content['new-5bf0481a-26e0-4c21-ad4b-a789b1de5b63'] = $pane;
   $display->panels['right'][0] = 'new-5bf0481a-26e0-4c21-ad4b-a789b1de5b63';
+  $pane = new stdClass();
+  $pane->pid = 'new-9ac6572a-2ce3-4cf7-ab15-cf0ef17acd11';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-events-other-calendars';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Other Useful Calendars',
+    'override_title_heading' => 'h3',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '9ac6572a-2ce3-4cf7-ab15-cf0ef17acd11';
+  $display->content['new-9ac6572a-2ce3-4cf7-ab15-cf0ef17acd11'] = $pane;
+  $display->panels['right'][1] = 'new-9ac6572a-2ce3-4cf7-ab15-cf0ef17acd11';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

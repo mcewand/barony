@@ -10,15 +10,16 @@
 function barony_events_menu_default_menu_custom() {
   $menus = array();
 
-  // Exported menu: menu-barony-calendars.
-  $menus['menu-barony-calendars'] = array(
-    'menu_name' => 'menu-barony-calendars',
-    'title' => 'Calendars',
-    'description' => '',
+  // Exported menu: menu-events-other-calendars.
+  $menus['menu-events-other-calendars'] = array(
+    'menu_name' => 'menu-events-other-calendars',
+    'title' => 'Events - Other Calendars',
+    'description' => 'Other group calendars (e.g. kingdom, neighboring baronies, sub-groups)',
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Calendars');
+  t('Events - Other Calendars');
+  t('Other group calendars (e.g. kingdom, neighboring baronies, sub-groups)');
 
   return $menus;
 }

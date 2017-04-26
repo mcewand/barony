@@ -67,3 +67,52 @@ function barony_dark_status_messages($variables) {
   return $output;
 }
 
+/**
+ * Implements template_preprocess_entity().
+ */
+function barony_dark_preprocess_entity(&$variables) {
+  if ($variables['entity_type'] == 'paragraphs_item') {
+    switch($variables['elements']['#bundle']) {
+      case 'officer_resources':
+        // Use the resource type field to choose our icon.
+        $type = $variables['field_office_resource_type'][0]['taxonomy_term']->name;
+
+        if ($type == 'External' && isset($variables['content']['field_office_resource_link'])) {
+          $variables['content']['field_office_resource_link'][0]['#suffix'] = '<i aria-hidden="true" class="fa fa-external-link"></i>';
+          #$variables['content']['field_office_resource_link'][0]['#suffix'] = '<span aria-hidden="true" class="glyphicon glyphicon-link"></span>';
+          $variables['content']['field_office_resource_link'][0]['#element']['attributes']['target'] = '_blank';
+
+          if (isset($variables['content']['field_office_resource_link'][0]['#element']['attributes']['class'])) {
+            $variables['content']['field_office_resource_link'][0]['#element']['attributes']['class'] .= 'barony-link-external';
+          }
+          else {
+            $variables['content']['field_office_resource_link'][0]['#element']['attributes']['class'] = 'barony-link-external';
+          }
+        }
+        elseif ($type == 'Download' && isset($variables['content']['field_office_resource_file'])) {
+          $file_entity = $variables['field_office_resource_file'][0]['entity'];
+          $uri = $file_entity->field_resource_file[$file_entity->language][0]['uri'];
+          $url = file_create_url($uri);
+          $options = array(
+            'attributes' => array(
+              'class' => array('barony-link-file'),
+              'target' => '_blank',
+            )
+          );
+          $variables['content']['field_office_resource_file'][0]['#suffix'] = '<i aria-hidden="true" class="fa fa-file-o"></i>';
+          #$variables['content']['field_office_resource_file'][0]['#suffix'] = '<span aria-hidden="true" class="glyphicon glyphicon-file"></span>';
+          $variables['content']['field_office_resource_file'][0]['#markup'] = l($file_entity->title, $url, $options);
+        }
+        
+
+        // Strip out the type reference because we don't want the field displayed.
+        unset($variables['content']['field_office_resource_type']);
+        
+        break;
+      default:
+        break;
+    }
+
+  }
+
+}

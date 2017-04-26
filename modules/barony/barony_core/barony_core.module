@@ -36,6 +36,7 @@ function barony_core_entity_info_alter(&$entity_info) {
  */
 function barony_core_preprocess_page(&$vars) {
   // Add Font Awesome
+  // @todo - decide if we really need FA or if bootstrap glyphs are fine
   drupal_add_js('//use.fontawesome.com/76948938e9.js', 'external');
   // Add Google Fonts
   drupal_add_css('//fonts.googleapis.com/css?family=Uncial+Antiqua|Metamorphous', array('group' => CSS_THEME));

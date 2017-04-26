@@ -109,6 +109,7 @@ features[field_instance][] = paragraphs_item-event_autocrat-field_event_autocrat
 features[field_instance][] = paragraphs_item-event_autocrat-field_event_autocrat_role
 features[field_instance][] = paragraphs_item-event_fees-field_event_fee_amount
 features[field_instance][] = paragraphs_item-event_fees-field_event_fee_type
+features[menu_custom][] = menu-events-other-calendars
 features[menu_links][] = main-menu_events:events
 features[menu_links][] = menu-footer-menu_events--activities:events
 features[node][] = barony_event

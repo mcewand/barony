@@ -40,14 +40,23 @@ ul {
   margin-bottom: 8px;
 }
 
+i.fa {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 body {
   color: #cccccc;
   /* Background pattern from Subtle Patterns */
-  background: url(../images/crissXcross.png);
+  /*background: url(../images/crissXcross.png);*/
+
+  /* Background pattern modified from http://backgrounds.mysitemyway.com */
+  background: url(../images/lines-grey.jpg);
 }
 
 .main-container {
-  background-color: #292929;
+  background-color: rgba(30, 30, 30, .8);
+  /*background-color: rgba(41, 41, 41, .8);*/
   -moz-box-shadow: 3px 3px 3px 1px black;
   -webkit-box-shadow: 3px 3px 3px 1px black;
   box-shadow: 3px 3px 3px 1px black;
@@ -305,6 +314,7 @@ h2.block-title {
  */
 .view-barony-homepage-carousel {
   background-color: #646464;
+  margin-top: 20px;
   overflow: hidden;
   -moz-box-shadow: 0px 3px 3px 1px black;
   -webkit-box-shadow: 0px 3px 3px 1px black;
@@ -321,9 +331,7 @@ h2.block-title {
   position: absolute; 
   bottom: 29px; 
   left: 0;
-  background-color: black;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
+  background-color: rgba(0, 0, 0, 0.7);
   border-left: 5px solid;
   border-color: whitesmoke;
 }
@@ -333,13 +341,12 @@ h2.block-title {
 }
 
 .view-barony-homepage-carousel .views-field-field-carousel-text {
+  width: 100%;
   padding: 5px 10px;
   position: absolute;
   bottom: 0px; 
   left: 0; 
-  background-color: black;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .view-barony-homepage-carousel .views-field-title a, 
@@ -351,7 +358,8 @@ h2.block-title {
 }
 
 .front #mini-panel-barony_hompage_highlights,
-.front .panels-flexible-region-7-center-inside {
+.front .panels-flexible-region-7-center-inside,
+#mini-panel-barony_court_highlights {
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: 1px solid black; /* #E5E5E5  */
@@ -360,7 +368,8 @@ h2.block-title {
   margin-bottom: 30px;
  }
 
-.front #mini-panel-barony_hompage_highlights .row .panel-panel {
+#mini-panel-barony_hompage_highlights .row .panel-panel,
+#mini-panel-barony_court_highlights .row .panel-panel {
   display:flex;
   justify-content:space-around;
 }
@@ -460,9 +469,30 @@ h2.block-title {
 /**
  * Event pages
  */
-.views-field-field-event-teaser-image {
+.page-events .panel-pane {
+  margin-bottom: 40px;
+}
+
+.page-events .views-field-field-event-teaser-image {
   float: left;
   margin-right: 10px;
+}
+
+.page-events .view-display-id-upcoming_events ul {
+  padding-left: 5px;
+}
+
+.page-events .views-field-field-s-date-1 {
+  float: left;
+  margin-right: 5px;
+}
+
+.page-events .views-field-field-s-date-1 ul {
+  padding-left: 0;
+}
+
+.page-events .view-display-id-upcoming_events .views-row {
+  border-bottom: 1px grey solid;
 }
 
 .horizontal-tabs-panes .panel {
@@ -676,7 +706,15 @@ h2.block-title {
   margin-right: 10px;
 }
 
-
+/**
+ * Court Panel, Page, List page & block
+ */
+.pane-node-field-court-picture .field-name-field-court-picture img {
+  margin-bottom: 30px;
+  -moz-box-shadow: 1px 3px 3px 2px black;
+  -webkit-box-shadow: 1px 3px 3px 2px black;
+  box-shadow: 1px 3px 3px 2px black;
+}
 
 /**
  * Make Google maps responsive
