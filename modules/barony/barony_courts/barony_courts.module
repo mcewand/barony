@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Courts feature.
+ */
+
+include_once 'barony_courts.features.inc';

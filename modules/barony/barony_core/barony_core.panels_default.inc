@@ -174,13 +174,13 @@ function barony_core_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => 0,
+    'barony_homepage_highlight_image' => '58',
     'barony_homepage_highlight_links' => array(
-      'value' => 'one|/home',
+      'value' => 'What is this?|/newcomers',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-7YnJPL0qTMltzRfftO8D6yRMj3VPFOVkWg1_t7QJ1k4',
-    'form_token' => 'WUCQbh3-QsM5OxwEgWvl2vArgFMto0rQKBEKzZdTIio',
+    'form_build_id' => 'form-dIiZqpl8uIETYxBzECdnswxATnOKnR_-YVc_rePduTw',
+    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
   $pane->cache = array();
@@ -209,13 +209,13 @@ function barony_core_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => 0,
+    'barony_homepage_highlight_image' => '56',
     'barony_homepage_highlight_links' => array(
-      'value' => 'two|/home',
+      'value' => 'What we do|/events',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-dCDetDD_VFyqsakQlZj6thRYr6hjYO5kWq5-HyOCUoI',
-    'form_token' => 'WUCQbh3-QsM5OxwEgWvl2vArgFMto0rQKBEKzZdTIio',
+    'form_build_id' => 'form-cimVaMlq_tXaiwQVGOj8MUASk2xcF5AYG1K9nSERsMM',
+    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
   $pane->cache = array();
@@ -244,13 +244,13 @@ function barony_core_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => 0,
+    'barony_homepage_highlight_image' => '57',
     'barony_homepage_highlight_links' => array(
-      'value' => 'three|/three',
+      'value' => 'Why we do this|/history',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-eGpF6Hnoi9Rk_FJd5q6Lk8dlvqLOwsU-OEzuNEddjHw',
-    'form_token' => 'WUCQbh3-QsM5OxwEgWvl2vArgFMto0rQKBEKzZdTIio',
+    'form_build_id' => 'form-3RofNQKESvci2OCAUKGi2tP_ZJ7kLcyzEWIVssXXN3I',
+    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
   $pane->cache = array();
