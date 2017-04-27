@@ -90,6 +90,47 @@ function barony_announcements_views_default_views() {
 
   /* Display: Announcements Homepage Block */
   $handler = $view->new_display('block', 'Announcements Homepage Block', 'announce_block');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'barony_announcement' => 'barony_announcement',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  $handler->display->display_options['filters']['promote']['group'] = 1;
+  /* Filter criterion: Content: Archive Date (field_announce_archive_date) */
+  $handler->display->display_options['filters']['field_announce_archive_date_value']['id'] = 'field_announce_archive_date_value';
+  $handler->display->display_options['filters']['field_announce_archive_date_value']['table'] = 'field_data_field_announce_archive_date';
+  $handler->display->display_options['filters']['field_announce_archive_date_value']['field'] = 'field_announce_archive_date_value';
+  $handler->display->display_options['filters']['field_announce_archive_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_announce_archive_date_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_announce_archive_date_value']['default_date'] = 'now';
+  $handler->display->display_options['filters']['field_announce_archive_date_value']['year_range'] = '-0:+3';
+  /* Filter criterion: Content: Archive Date (field_announce_archive_date) */
+  $handler->display->display_options['filters']['field_announce_archive_date_value_1']['id'] = 'field_announce_archive_date_value_1';
+  $handler->display->display_options['filters']['field_announce_archive_date_value_1']['table'] = 'field_data_field_announce_archive_date';
+  $handler->display->display_options['filters']['field_announce_archive_date_value_1']['field'] = 'field_announce_archive_date_value';
+  $handler->display->display_options['filters']['field_announce_archive_date_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_announce_archive_date_value_1']['group'] = 2;
   $handler->display->display_options['block_description'] = 'Announcements Block';
 
   /* Display: Announcements Archive */
@@ -123,6 +164,13 @@ function barony_announcements_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Posted';
+  $handler->display->display_options['fields']['created']['date_format'] = 'barony_short_day_and_date';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';

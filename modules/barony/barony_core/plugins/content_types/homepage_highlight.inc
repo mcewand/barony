@@ -106,4 +106,13 @@ function barony_core_homepage_highlight_content_type_edit_form_submit(&$form, &$
       $form_state['conf'][$key] = $form_state['values'][$key];
     }
   }
+
+  // Set the status of the file to permanent, so we don't loose it during features updates.
+  // @todo - sort this out as an exclusion in the Feature for the distro
+  if (isset($form_state['values']['barony_homepage_highlight_image'])) {
+    $file = file_load($form_state['values']['barony_homepage_highlight_image']);
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+  }
+  // @todo add file_usage_add()
 }
