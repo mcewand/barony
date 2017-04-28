@@ -11,11 +11,11 @@ function barony_events_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'barony_events';
+  $page->name = 'barony_activites';
   $page->task = 'page';
-  $page->admin_title = 'Barony Events';
-  $page->admin_description = 'Landing Page for Events and Activities';
-  $page->path = 'events';
+  $page->admin_title = 'Barony Activites';
+  $page->admin_description = 'Landing Page for Activities';
+  $page->path = 'activities';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
@@ -26,13 +26,13 @@ function barony_events_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_barony_events__panel';
+  $handler->name = 'page_barony_activites__panel_context_8f71d76c-df28-4b31-94d3-05436ebfeb56';
   $handler->task = 'page';
-  $handler->subtask = 'barony_events';
+  $handler->subtask = 'barony_activites';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Events and Activities',
+    'title' => 'Activities',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -41,7 +41,11 @@ function barony_events_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'name' => 'panel',
+    'name' => '',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'bootstrap_twocol_stacked';
@@ -72,7 +76,156 @@ function barony_events_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Events & Activities';
+  $display->title = 'Regular Activities';
+  $display->uuid = 'e6652de8-1582-4a93-acaf-e32c97b7acbe';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_barony_activites__panel_context_8f71d76c-df28-4b31-94d3-05436ebfeb56';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-34c4b042-5ca0-4baf-852c-11465670e206';
+  $pane->panel = 'left';
+  $pane->type = 'block';
+  $pane->subtype = 'views-a3416f1733f0e094ec05c98e8034405c';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '34c4b042-5ca0-4baf-852c-11465670e206';
+  $display->content['new-34c4b042-5ca0-4baf-852c-11465670e206'] = $pane;
+  $display->panels['left'][0] = 'new-34c4b042-5ca0-4baf-852c-11465670e206';
+  $pane = new stdClass();
+  $pane->pid = 'new-e5b7d347-ab50-44a3-9b9b-d3656954da63';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'views-5e4f038bd338e089eddab6ddf8ffdcff';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e5b7d347-ab50-44a3-9b9b-d3656954da63';
+  $display->content['new-e5b7d347-ab50-44a3-9b9b-d3656954da63'] = $pane;
+  $display->panels['right'][0] = 'new-e5b7d347-ab50-44a3-9b9b-d3656954da63';
+  $pane = new stdClass();
+  $pane->pid = 'new-5bf0481a-26e0-4c21-ad4b-a789b1de5b63';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'views-3a2d22b18925f65e79f66192c1412207';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '5bf0481a-26e0-4c21-ad4b-a789b1de5b63';
+  $display->content['new-5bf0481a-26e0-4c21-ad4b-a789b1de5b63'] = $pane;
+  $display->panels['right'][1] = 'new-5bf0481a-26e0-4c21-ad4b-a789b1de5b63';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['barony_activites'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'barony_events';
+  $page->task = 'page';
+  $page->admin_title = 'Barony Events';
+  $page->admin_description = 'Landing Page for Events and Activities';
+  $page->path = 'events';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_barony_events__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'barony_events';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Events',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'bootstrap_twocol_stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'right' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'top' => NULL,
+      'bottom' => NULL,
+    ),
+    'left' => array(
+      'style' => 'bootstrap_region',
+    ),
+    'right' => array(
+      'style' => 'bootstrap_region',
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Events';
   $display->uuid = 'e6652de8-1582-4a93-acaf-e32c97b7acbe';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_barony_events__panel';
@@ -102,13 +255,25 @@ function barony_events_default_page_manager_pages() {
   $display->content['new-e5b7d347-ab50-44a3-9b9b-d3656954da63'] = $pane;
   $display->panels['left'][0] = 'new-e5b7d347-ab50-44a3-9b9b-d3656954da63';
   $pane = new stdClass();
-  $pane->pid = 'new-34c4b042-5ca0-4baf-852c-11465670e206';
+  $pane->pid = 'new-9dd8023a-bd44-4bee-9693-839f50a2b37e';
   $pane->panel = 'left';
-  $pane->type = 'block';
-  $pane->subtype = 'views-a3416f1733f0e094ec05c98e8034405c';
+  $pane->type = 'views';
+  $pane->subtype = 'barony_events_calendar';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'upcoming_events_block',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -121,9 +286,9 @@ function barony_events_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '34c4b042-5ca0-4baf-852c-11465670e206';
-  $display->content['new-34c4b042-5ca0-4baf-852c-11465670e206'] = $pane;
-  $display->panels['left'][1] = 'new-34c4b042-5ca0-4baf-852c-11465670e206';
+  $pane->uuid = '9dd8023a-bd44-4bee-9693-839f50a2b37e';
+  $display->content['new-9dd8023a-bd44-4bee-9693-839f50a2b37e'] = $pane;
+  $display->panels['left'][1] = 'new-9dd8023a-bd44-4bee-9693-839f50a2b37e';
   $pane = new stdClass();
   $pane->pid = 'new-5bf0481a-26e0-4c21-ad4b-a789b1de5b63';
   $pane->panel = 'right';

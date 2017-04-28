@@ -473,29 +473,43 @@ h2.block-title {
 /**
  * Event pages
  */
+.page-activites .panel-pane,
 .page-events .panel-pane {
   margin-bottom: 40px;
 }
 
+.page-activities .views-field-field-event-teaser-image,
 .page-events .views-field-field-event-teaser-image {
   float: left;
   margin-right: 10px;
 }
 
+.page-activities .view-display-id-upcoming_events ul,
 .page-events .view-display-id-upcoming_events ul {
   padding-left: 5px;
 }
 
+.page-activities .views-field-field-s-date-1,
 .page-events .views-field-field-s-date-1 {
   float: left;
   margin-right: 5px;
 }
 
+.page-activities .views-field-field-s-date-1 ul,
 .page-events .views-field-field-s-date-1 ul {
   padding-left: 0;
 }
 
-.page-events .view-display-id-upcoming_events .views-row {
+.page-events .view-display-id-upcoming_events_block .views-field-field-event-date {
+  padding-bottom: 5px;
+}
+
+.page-events .view-display-id-upcoming_events_block .views-row {
+  padding-bottom: 10px;
+  border-bottom: 1px grey solid;
+}
+
+.page-activities .view-display-id-upcoming_events .views-row {
   border-bottom: 1px grey solid;
 }
 
@@ -552,6 +566,11 @@ h2.block-title {
 .node-barony-event .horizontal-tabs .horizontal-tabs-pane {
   margin-top: 0;
   padding: 30px 20px;
+}
+
+/* override bootstrap default, for body text images */
+.node-barony-event .img-responsive {
+  display: inline-block;
 }
 
 .node-barony-event .field-name-field-event-info-overview,
