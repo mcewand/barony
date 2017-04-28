@@ -98,5 +98,4 @@ function _barony_dark_file_additions() {
 
   // Custom additions
   drupal_add_js(drupal_get_path('theme', 'barony_dark') . '/js/header-movement.js', array('type' => 'file', 'scope' => 'footer'));
-  drupal_add_js(drupal_get_path('theme', 'barony_dark') . '/js/highlight-flipper.js', array('type' => 'file', 'scope' => 'footer'));
 }

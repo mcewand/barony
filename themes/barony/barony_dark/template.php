@@ -12,6 +12,7 @@
  * !IMPORTANT REMOVE THIS BEFORE MOVING TO PROD
  */
 function barony_dark_status_messages($variables) {
+
   $display = $variables['display'];
   $output = '';
 

@@ -600,6 +600,17 @@ h2.block-title {
   font-size: 1.7em;
 }
 
+/* Arrows for activity rows */
+.left-arrow-down:before {
+  content: '\25bc';
+  padding-right: 10px;
+}
+
+.left-arrow-up:before {
+  content: '\25b2';
+  padding-right: 10px;
+}
+
 .node-barony-event .group-event-d-schedule table {
   table-layout: fixed;
   width: 100%;

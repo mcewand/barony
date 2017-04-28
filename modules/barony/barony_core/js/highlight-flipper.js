@@ -1,10 +1,10 @@
 (function ($) {
-  Drupal.behaviors.barony_dark_highlight_flipper = {
+  Drupal.behaviors.barony_core_highlight_flipper = {
     attach: function (context, settings) {
       $(document).ready(function(){
         if($(window).width() <= 600)
         {
-          $('.front #mini-panel-barony_hompage_highlights .row .panel-panel').css('display', 'block');
+          $('#mini-panel-barony_hompage_highlights .row .panel-panel').css('display', 'block');
         }
       });
 

@@ -26,7 +26,8 @@ function barony_core_homepage_highlight_content_type_render($subtype, $conf, $pa
     if (is_object($file)) {
       $uri = $file->uri;
       $url = file_create_url($uri);
-      $content .= '<img class="barony-homepage-highlight-image" src="' . $url .'" />';
+      // @todo add actual alt and title handling
+      $content .= '<img class="barony-homepage-highlight-image" src="' . $url .'" alt="highlight"/>';
     }
   }
 
