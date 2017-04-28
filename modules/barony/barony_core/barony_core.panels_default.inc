@@ -174,12 +174,12 @@ function barony_core_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => '62',
+    'barony_homepage_highlight_image' => '73',
     'barony_homepage_highlight_links' => array(
       'value' => 'What is this?|/newcomers',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-wif9VT5R6trOuDMEyMZhQFgLw65h_XP7swYz29Gcrwc',
+    'form_build_id' => 'form-cqwgzPNZBhWF7Xe1Dg25_vKbn6_YGXqTTWbAWgF6sGI',
     'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
@@ -209,12 +209,12 @@ function barony_core_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => '64',
+    'barony_homepage_highlight_image' => '74',
     'barony_homepage_highlight_links' => array(
       'value' => 'What we do|/events',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-dDaZCegWIjIMROsbSuda-4AqUV-Wn6cr-UZFLHzsTbQ',
+    'form_build_id' => 'form-yFIZSqOKPYUx18UysfnTEaCAA_mCCUSFql-TV9ArAc4',
     'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
@@ -244,12 +244,12 @@ function barony_core_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => '65',
+    'barony_homepage_highlight_image' => '75',
     'barony_homepage_highlight_links' => array(
       'value' => 'Why we do this|/history',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-zhhqOADa70GNsk2z1U6ysHeYdtD_y4PKdnFesAKlWUQ',
+    'form_build_id' => 'form-jROECiq16m3gWEySC0QHwNfZf1_3nwfNzBPqKUAGv00',
     'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
