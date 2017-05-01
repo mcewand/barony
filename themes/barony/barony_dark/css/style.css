@@ -454,6 +454,11 @@ h2.block-title {
   margin-top: 0;
 }
 
+
+.front .pane-barony-hompage-bottom .left h2 {
+  padding-left: 10px;
+}
+
 .view-display-id-announce_block {
   padding-left: 10px;
 }
