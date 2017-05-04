@@ -1,7 +1,7 @@
 name = Barony
 description = A starter profile for baronial websites for the Society for Creative Anachronism
 core = 7.x
-version = 7.x-0.1
+version = 7.x-1.0
 
 ; Barony Core
 dependencies[] = barony_core
@@ -30,41 +30,46 @@ dependencies[] = toolbar
 
 ; Calendars
 dependencies[] = calendar
-;dependencies[] = jquery_calendar
+dependencies[] = calendar_block
 
 ; chaos tools
 dependencies[] = ctools
 
-; context
-;dependencies[] = context
-;dependencies[] = context_ui
-
 ; date/time
 dependencies[] = date
 
+; entities
+dependencies[] = entity
+dependencies[] = entitycache
+
 ; features
 dependencies[] = features
+dependencies[] = strongarm
 
 ; fields
-dependencies[] = field_group
+dependencies[] = email
 dependencies[] = entityreference
+dependencies[] = field_group
+dependencies[] = link
+dependencies[] = paragraphs
+dependencies[] = phone
 
 ; media
 dependencies[] = imce
 dependencies[] = imce_wysiwyg
+dependencies[] = wysiwyg
+
+; layout
+dependencies[] = panels
+dependencies[] = panels_bootstrap_layouts
 
 ; nodequeue
 dependencies[] = nodequeue
 
 ; other
 dependencies[] = admin_menu
-;dependencies[] = diff
-dependencies[] = entity
-dependencies[] = entitycache
 dependencies[] = libraries
-dependencies[] = menu_filter
 dependencies[] = pathauto
-dependencies[] = strongarm
 dependencies[] = token
 
 ; statistics
@@ -76,22 +81,18 @@ dependencies[] = styles_ui
 dependencies[] = file_styles
 
 ; theme tools
-;dependencies[] = delta
-;dependencies[] = delta_blocks
-;dependencies[] = delta_ui
-;dependencies[] = omega_tools
-
-
-; user interface
-dependencies[] = imce_wysiwyg
-; dependencies[] = jquery_update
-; dependencies[] = superfish
-dependencies[] = wysiwyg
+dependencies[] = jquery_update
+dependencies[] = superfish
 
 ; views
 dependencies[] = views
 dependencies[] = views_ui
-;dependencies[] = views_bulk_operations
+dependencies[] = views_bootstrap
+dependencies[] = views_slideshow
+
+;; Development
+;dependencies[] = diff
+;dependencies[] = devel
 
 
 files[] = barony.profile
