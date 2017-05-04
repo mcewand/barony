@@ -29,7 +29,7 @@ function barony_awards_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
@@ -67,7 +67,6 @@ function barony_awards_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -88,7 +87,7 @@ function barony_awards_views_default_views() {
   $handler->display->display_options['path'] = 'awards-list';
 
   /* Display: Awards Block */
-  $handler = $view->new_display('block', 'Awards Block', 'block_1');
+  $handler = $view->new_display('block', 'Awards Block', 'awards_block');
   $export['barony_awards'] = $view;
 
   return $export;

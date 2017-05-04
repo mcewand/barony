@@ -27,7 +27,7 @@ function barony_awards_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 10,
+    'weight' => -48,
     'customized' => 1,
     'parent_identifier' => 'main-menu_barony:<front>',
   );

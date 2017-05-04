@@ -43,6 +43,9 @@ function barony_events_strongarm() {
       'main_page_right' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -262,6 +265,34 @@ function barony_events_strongarm() {
   $strongarm->name = 'pathauto_node_barony_event_announce_pattern';
   $strongarm->value = 'events/[node:title]';
   $export['pathauto_node_barony_event_announce_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_barony_event_pattern';
+  $strongarm->value = 'event/[node:title]';
+  $export['pathauto_node_barony_event_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_event_activities_pattern';
+  $strongarm->value = 'activity/[term:name]';
+  $export['pathauto_taxonomy_term_event_activities_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_event_autocrat_roles_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_event_autocrat_roles_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_event_fee_types_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_event_fee_types_pattern'] = $strongarm;
 
   return $export;
 }

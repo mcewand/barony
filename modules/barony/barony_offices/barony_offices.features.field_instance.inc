@@ -651,6 +651,50 @@ function barony_offices_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'paragraphs_item-officer_resources-field_office_resource_file'.
+  $field_instances['paragraphs_item-officer_resources-field_office_resource_file'] = array(
+    'bundle' => 'officer_resources',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 0,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_office_resource_file',
+    'label' => 'File Reference',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
   // 'paragraphs_item-officer_resources-field_office_resource_link'.
   $field_instances['paragraphs_item-officer_resources-field_office_resource_link'] = array(
     'bundle' => 'officer_resources',
@@ -663,7 +707,7 @@ function barony_offices_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -717,10 +761,11 @@ function barony_offices_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -732,7 +777,7 @@ function barony_offices_field_default_field_instances() {
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_office_resource_type',
     'label' => 'Link Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -741,7 +786,7 @@ function barony_offices_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 0,
     ),
   );
 
@@ -750,6 +795,7 @@ function barony_offices_field_default_field_instances() {
   t('Badge');
   t('Brief description of the office that will be used on the office list page.');
   t('Email');
+  t('File Reference');
   t('Link');
   t('Link Type');
   t('Long Description and Links');

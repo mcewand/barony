@@ -5,3 +5,14 @@
  */
 
 include_once 'barony_events.features.inc';
+
+/**
+ * Implements hook_node_view().
+ */
+function barony_events_node_view($node, $view_mode, $langcode) {
+	if ($node->type == 'barony_event' && $view_mode == 'full') {
+	  // Add in js related to plugins in this module
+	  drupal_add_js(drupal_get_path('module', 'barony_events') . '/js/event-actions.js', array('type' => 'file', 'scope' => 'footer'));
+	}
+}
+
