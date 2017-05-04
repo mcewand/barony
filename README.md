@@ -1,7 +1,7 @@
 # Barony
 A Drupal profile for Society for Creative Anachronism (SCA) websites
 ***
-This was originally build for the [Barony of Caerthe](www.caerthe-sca.org) in the Outlands, the Denver branch of the SCA.
+This was originally build for the [Barony of Caerthe](http://www.caerthe-sca.org) in the Outlands, the Denver branch of the SCA.
 
 
 ## Formatting responsive elements
