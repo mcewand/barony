@@ -261,6 +261,7 @@ ul#superfish-1.sf-menu li ul li a.active {
 
 section#block-superfish-1 .sf-accordion-toggle {
   background-color: #646464;
+  display: none;
 }
 
 section#block-superfish-1 .sf-accordion-toggle a {
@@ -271,6 +272,10 @@ section#block-superfish-1 .sf-accordion-toggle a {
 
 ul#superfish-1-accordion {
   margin: 0 !important;
+  left:auto !important;
+  top:auto !important;
+  display: block;
+  position: relative;
 }
 
 
