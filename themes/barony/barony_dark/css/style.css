@@ -641,8 +641,12 @@ h2.block-title {
 }
 
 .node-barony-event .group-event-d-schedule table {
-  table-layout: fixed;
+  /*table-layout: fixed;*/
   width: 100%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  border-top: none;
 }
 
 .node-barony-event .group-event-d-schedule table th {
