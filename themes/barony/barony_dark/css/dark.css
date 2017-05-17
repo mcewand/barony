@@ -1,0 +1,215 @@
+
+h1,
+#navbar a.name {
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.6);
+}
+
+h2, h3, h4 {
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+}
+
+a,
+.barony-homepage-highlight-menu a,
+.barony-homepage-highlight-menu a:hover,
+ul#superfish-1.menu li a:hover,
+ul#superfish-1.menu li a:focus,
+ul#superfish-1.menu li a:active,
+ul#superfish-1.sf-menu li a:hover,
+ul#superfish-1.sf-menu li a:focus,
+ul#superfish-1.sf-menu li a:active,
+ul#superfish-1 li.active-trail a:link,
+ul#superfish-1 li.active-trail a:visited,
+ul#superfish-1.menu li a:hover,
+ul#superfish-1.menu li:hover a,
+ul#superfish-1.menu li.hover a,
+ul#superfish-1.sf-menu li a:hover,
+ul#superfish-1.sf-menu li:hover a,
+ul#superfish-1.sf-menu li.hover a,
+ul#superfish-1.sf-menu li.active-trail a:link,
+ul#superfish-1.sf-menu li.active-trail a:visited,
+ul#superfish-1.sf-menu li ul li a:hover,
+section#block-superfish-1 .sf-accordion-toggle a,
+ul#superfish-1-accordion li a,
+.barony-homepage-highlight-menu a,
+.barony-homepage-highlight-menu a:hover,
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li.selected strong {
+  color: #fff;
+}
+
+a:hover,
+a:focus {
+  color: slategrey;
+}
+
+/* Correct for calendars */
+.calendar-calendar a {
+  color: black;
+}
+
+body {
+  /* Background pattern modified from http://backgrounds.mysitemyway.com */
+  background: url(../images/lines-grey.jpg);
+}
+
+.main-container {
+  background-color: rgba(30, 30, 30, .8);
+  -moz-box-shadow: 3px 3px 3px 1px black;
+  -webkit-box-shadow: 3px 3px 3px 1px black;
+  box-shadow: 3px 3px 3px 1px black;
+
+}
+
+#navbar {
+  background-image: url('/sites/default/files/aspenleafdark.jpg');
+}
+
+body,
+#navbar a.name,
+#footer-sitemap a,
+.view-barony-homepage-carousel .views-field-title a, 
+.view-barony-homepage-carousel .views-field-title a:hover,
+.view-barony-homepage-carousel .views-field-field-carousel-text a,
+.view-barony-homepage-carousel .views-field-field-carousel-text a:hover,
+.view-display-id-homepage_block h3 a {
+  color: #cccccc;
+}
+
+#navbar .navbar-location {
+  color: #b3b3b3;
+}
+
+.navbar-default {
+  -webkit-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
+}
+
+/* Primary Menu
+/-------------------------------------------------------------- */
+ul#superfish-1 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+ul#superfish-1.menu li a:link,
+ul#superfish-1.menu li a:visited,
+ul#superfish-1.sf-menu li a:link,
+ul#superfish-1.sf-menu li a:visited {
+  color: #999;
+}
+
+/* Hovers for parent menu item */
+ul#superfish-1.menu li a:hover,
+ul#superfish-1.menu li:hover a,
+ul#superfish-1.menu li.hover a,
+ul#superfish-1.sf-menu li a:hover,
+ul#superfish-1.sf-menu li:hover a,
+ul#superfish-1.sf-menu li.hover a,
+ul#superfish-1.sf-menu li.active-trail a:link,
+ul#superfish-1.sf-menu li.active-trail a:visited,
+ul#superfish-1.sf-menu li:hover ul li a:link,
+ul#superfish-1.sf-menu li:hover ul li a:visited,
+ul#superfish-1.sf-menu li.hover ul li a:link,
+ul#superfish-1.sf-menu li.hover ul li a:visited,
+ul#superfish-1.sf-menu li.sfHover ul li a:link,
+ul#superfish-1.sf-menu li.sfHover ul li a:visited,
+ul#superfish-1.sf-menu li ul li a:link,
+ul#superfish-1.sf-menu li ul li a:visited,
+section#block-superfish-1 .sf-accordion-toggle,
+ul#superfish-1-accordion li,
+.view-barony-homepage-carousel,
+.barony-homepage-highlight {
+  background: #646464;
+}
+
+ul#superfish-1.sf-menu li:hover ul li a:link,
+ul#superfish-1.sf-menu li:hover ul li a:visited,
+ul#superfish-1.sf-menu li.hover ul li a:link,
+ul#superfish-1.sf-menu li.hover ul li a:visited,
+ul#superfish-1.sf-menu li.sfHover ul li a:link,
+ul#superfish-1.sf-menu li.sfHover ul li a:visited,
+ul#superfish-1.sf-menu li ul li a:link,
+ul#superfish-1.sf-menu li ul li a:visited,
+ul#superfish-1-accordion li {
+  border-bottom: 1px solid #888;
+}
+
+.view-barony-homepage-carousel,
+.barony-homepage-highlight {
+  -moz-box-shadow: 0px 3px 3px 1px black;
+  -webkit-box-shadow: 0px 3px 3px 1px black;
+  box-shadow: 0px 3px 3px 1px black;
+}
+
+.view-barony-homepage-carousel .views-field-title {
+  border-color: whitesmoke;
+}
+
+.view-barony-homepage-carousel .views-field-title,
+.view-barony-homepage-carousel .views-field-field-carousel-text { 
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.front #mini-panel-barony_hompage_highlights,
+.front .panels-flexible-region-7-center-inside,
+#mini-panel-barony_court_highlights {
+  border-top: 1px solid black; /* #E5E5E5  */
+  border-bottom: 1px solid black;
+}
+
+.barony-homepage-highlight-menu {
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+.view-display-id-homepage_block {
+  border: 2px gray solid;
+}
+
+.view-display-id-announcements_archive .views-row,
+.view-display-id-announce_block .views-row,
+.page-events .view-display-id-upcoming_events_block .views-row,
+.page-activities .view-display-id-upcoming_events .views-row,
+.view-display-id-office_announcements .views-row,
+.view-display-id-resources_block .views-row,
+.view-display-id-resources_page .views-row {
+  border-bottom: 1px grey solid;
+}
+
+.node-barony-event fieldset,
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li.selected {
+  background-color: #3e3e3e;
+}
+
+.node-barony-event ul.horizontal-tabs-list,
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li:hover a, 
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li:focus a {
+  background-color: #292929;
+}
+
+.node-barony-event .horizontal-tabs ul.horizontal-tabs-list li {
+  background-color: #555;
+}
+
+.node-barony-event .paragraphs-items-full .field-name-field-event-activities-type {
+  color: #c6c6c6;
+  background: #444;
+}
+
+.node-barony-event .group-event-d-schedule table th {
+  border-bottom: 1px #cccccc solid;
+}
+
+.node-barony-event .group-event-d-schedule table tr,
+.node-barony-event .paragraphs-item-event-autocrat {
+  border-bottom: 1px black dashed;
+}
+
+.views-field-field-office-picture,
+.pane-node-field-court-picture .field-name-field-court-picture img {
+  -moz-box-shadow: 1px 3px 3px 2px black;
+  -webkit-box-shadow: 1px 3px 3px 2px black;
+  box-shadow: 1px 3px 3px 2px black;
+}
+
+
+
+

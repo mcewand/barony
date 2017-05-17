@@ -1,5 +1,5 @@
 (function ($) {
-  Drupal.behaviors.barony_dark_header_movement = {
+  Drupal.behaviors.barony_base_header_movement = {
     attach: function (context, settings) {
       $(document).ready(function(){
         if($(window).width() <= 768)
