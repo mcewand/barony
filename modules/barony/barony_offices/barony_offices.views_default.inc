@@ -107,6 +107,13 @@ function barony_offices_views_default_views() {
 
   /* Display: Officer Grid */
   $handler = $view->new_display('page', 'Officer Grid', 'offices_page');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['label'] = 'Announcements';
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'See <a href="/content/open-officer-positions">Current Open Offices</a>.';
   $handler->display->display_options['path'] = 'officers';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Officers';

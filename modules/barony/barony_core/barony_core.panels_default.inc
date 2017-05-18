@@ -39,7 +39,12 @@ function barony_core_default_panels_mini() {
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
-      'right' => NULL,
+      'right' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '4',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
       'bottom' => NULL,
     ),
     'left' => array(
@@ -53,6 +58,9 @@ function barony_core_default_panels_mini() {
     ),
     'bottom' => array(
       'style' => 'naked',
+    ),
+    'right' => array(
+      'style' => 'bootstrap_region',
     ),
   );
   $display->cache = array();
@@ -108,6 +116,59 @@ function barony_core_default_panels_mini() {
   $pane->uuid = 'ef7e9cc6-98a7-4590-9399-24816bdbc100';
   $display->content['new-ef7e9cc6-98a7-4590-9399-24816bdbc100'] = $pane;
   $display->panels['middle'][0] = 'new-ef7e9cc6-98a7-4590-9399-24816bdbc100';
+  $pane = new stdClass();
+  $pane->pid = 'new-d64e5109-b266-43ff-8248-48d568baa4fc';
+  $pane->panel = 'right';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '',
+    'format' => 'barony_wysiwyg',
+    'substitute' => TRUE,
+    'name' => 'barony_follow_us',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd64e5109-b266-43ff-8248-48d568baa4fc';
+  $display->content['new-d64e5109-b266-43ff-8248-48d568baa4fc'] = $pane;
+  $display->panels['right'][0] = 'new-d64e5109-b266-43ff-8248-48d568baa4fc';
+  $pane = new stdClass();
+  $pane->pid = 'new-d787f2af-648c-403f-85e1-bc17a30f7348';
+  $pane->panel = 'right';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'TEMP: Media Contacts',
+    'title' => 'Looking for a Demo?',
+    'title_heading' => 'h2',
+    'body' => '<p>We do demonstrations&nbsp;for schools, libraries, and other groups. &nbsp;Our demos can include just about anything from armored combat and discussions about chivalric virtues to arts and science classes. &nbsp;If you&#39;re interested in more information, please contact&nbsp;<a href="mailto:excellencies@caerthe-sca.org?subject=Information%20request%20for%20a%20demo">Their Excellencies</a>.</p>',
+    'format' => 'barony_wysiwyg',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'd787f2af-648c-403f-85e1-bc17a30f7348';
+  $display->content['new-d787f2af-648c-403f-85e1-bc17a30f7348'] = $pane;
+  $display->panels['right'][1] = 'new-d787f2af-648c-403f-85e1-bc17a30f7348';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-54cd1855-0d8d-4a5f-9e12-0405c8b42832';
   $mini->display = $display;
@@ -195,41 +256,6 @@ function barony_core_default_panels_mini() {
   $display->content['new-b4089d72-0456-4dc9-b416-12700e91bdf2'] = $pane;
   $display->panels['top'][0] = 'new-b4089d72-0456-4dc9-b416-12700e91bdf2';
   $pane = new stdClass();
-  $pane->pid = 'new-006d2037-4393-4efe-93f5-605ff456d09b';
-  $pane->panel = 'top';
-  $pane->type = 'homepage_highlight';
-  $pane->subtype = 'homepage_highlight';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'buttons' => NULL,
-    'aligner_start' => NULL,
-    'override_title' => 1,
-    'override_title_text' => '<none>',
-    'override_title_heading' => 'h2',
-    'aligner_stop' => NULL,
-    'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => '74',
-    'barony_homepage_highlight_links' => array(
-      'value' => 'What we do|/events',
-      'format' => 'plain_text',
-    ),
-    'form_build_id' => 'form-yFIZSqOKPYUx18UysfnTEaCAA_mCCUSFql-TV9ArAc4',
-    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
-    'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '006d2037-4393-4efe-93f5-605ff456d09b';
-  $display->content['new-006d2037-4393-4efe-93f5-605ff456d09b'] = $pane;
-  $display->panels['top'][1] = 'new-006d2037-4393-4efe-93f5-605ff456d09b';
-  $pane = new stdClass();
   $pane->pid = 'new-39c96dd7-7d25-430a-b1a0-e1dcbdbaff88';
   $pane->panel = 'top';
   $pane->type = 'homepage_highlight';
@@ -244,13 +270,48 @@ function barony_core_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => '75',
+    'barony_homepage_highlight_image' => '187',
     'barony_homepage_highlight_links' => array(
-      'value' => 'Why we do this|/history',
+      'value' => 'How to get started|/content/attending-your-first-event',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-jROECiq16m3gWEySC0QHwNfZf1_3nwfNzBPqKUAGv00',
-    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
+    'form_build_id' => 'form-x4PEi7_Bvv1EY_hSr3uPGMGCHhIOVBdLOVotGwV8LSQ',
+    'form_token' => 'zJzJbZYMpXcRmDNbIp7UTQeEkp0EelVlWUl_XZ7yUu8',
+    'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '39c96dd7-7d25-430a-b1a0-e1dcbdbaff88';
+  $display->content['new-39c96dd7-7d25-430a-b1a0-e1dcbdbaff88'] = $pane;
+  $display->panels['top'][1] = 'new-39c96dd7-7d25-430a-b1a0-e1dcbdbaff88';
+  $pane = new stdClass();
+  $pane->pid = 'new-006d2037-4393-4efe-93f5-605ff456d09b';
+  $pane->panel = 'top';
+  $pane->type = 'homepage_highlight';
+  $pane->subtype = 'homepage_highlight';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'buttons' => NULL,
+    'aligner_start' => NULL,
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+    'aligner_stop' => NULL,
+    'override_title_markup' => NULL,
+    'barony_homepage_highlight_image' => '191',
+    'barony_homepage_highlight_links' => array(
+      'value' => 'What we do|/activities',
+      'format' => 'plain_text',
+    ),
+    'form_build_id' => 'form-f9pHj1ZmX1yRo_Oy-aeML7ffZz1fKKcikdu8hNHF3f8',
+    'form_token' => 'zJzJbZYMpXcRmDNbIp7UTQeEkp0EelVlWUl_XZ7yUu8',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
   $pane->cache = array();
@@ -261,9 +322,9 @@ function barony_core_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '39c96dd7-7d25-430a-b1a0-e1dcbdbaff88';
-  $display->content['new-39c96dd7-7d25-430a-b1a0-e1dcbdbaff88'] = $pane;
-  $display->panels['top'][2] = 'new-39c96dd7-7d25-430a-b1a0-e1dcbdbaff88';
+  $pane->uuid = '006d2037-4393-4efe-93f5-605ff456d09b';
+  $display->content['new-006d2037-4393-4efe-93f5-605ff456d09b'] = $pane;
+  $display->panels['top'][2] = 'new-006d2037-4393-4efe-93f5-605ff456d09b';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-b4089d72-0456-4dc9-b416-12700e91bdf2';
   $mini->display = $display;

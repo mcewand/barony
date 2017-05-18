@@ -57,7 +57,7 @@ function barony_core_default_page_manager_pages() {
       ),
       'main' => array(
         'type' => 'column',
-        'width' => 100.0,
+        'width' => 100,
         'width_type' => '%',
         'children' => array(
           0 => 3,
@@ -211,7 +211,13 @@ function barony_core_default_page_manager_pages() {
     'override_title_text' => '<none>',
     'override_title_heading' => 'h2',
   );
-  $pane->cache = array();
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '3600',
+      'granularity' => 'none',
+    ),
+  );
   $pane->style = array(
     'settings' => NULL,
   );
@@ -234,7 +240,13 @@ function barony_core_default_page_manager_pages() {
     'override_title_text' => '<none>',
     'override_title_heading' => 'h2',
   );
-  $pane->cache = array();
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '3600',
+      'granularity' => 'none',
+    ),
+  );
   $pane->style = array(
     'settings' => NULL,
   );
@@ -257,7 +269,13 @@ function barony_core_default_page_manager_pages() {
     'override_title_text' => '<none>',
     'override_title_heading' => 'h2',
   );
-  $pane->cache = array();
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '86400',
+      'granularity' => 'none',
+    ),
+  );
   $pane->style = array(
     'settings' => NULL,
   );
