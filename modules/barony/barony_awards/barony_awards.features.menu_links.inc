@@ -17,9 +17,7 @@ function barony_awards_menu_default_menu_links() {
     'router_path' => 'awards',
     'link_title' => 'Awards',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
+      'attributes' => array(),
       'identifier' => 'main-menu_awards:awards',
     ),
     'module' => 'menu',
@@ -27,7 +25,7 @@ function barony_awards_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
     'parent_identifier' => 'main-menu_barony:<front>',
   );

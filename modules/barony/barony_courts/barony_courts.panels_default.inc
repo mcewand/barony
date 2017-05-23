@@ -71,13 +71,13 @@ function barony_courts_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => 0,
+    'barony_homepage_highlight_image' => '188',
     'barony_homepage_highlight_links' => array(
       'value' => 'Officers|/officers',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-GNJogy3oa8F1cIRBL1Rj84un9CV-C0i9ypT4hz_OMHw',
-    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
+    'form_build_id' => 'form-yncBheYDRHbQbzDkIIvDK0W6DGO2nbxUfxtey103q8U',
+    'form_token' => 'zJzJbZYMpXcRmDNbIp7UTQeEkp0EelVlWUl_XZ7yUu8',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
   $pane->cache = array();
@@ -106,13 +106,13 @@ function barony_courts_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => 0,
+    'barony_homepage_highlight_image' => '189',
     'barony_homepage_highlight_links' => array(
       'value' => 'Awards|/awards',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-M-GqhpJP5EYZxoAEjK2jrK1FWno5S_6nP85dMt-M5ZI',
-    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
+    'form_build_id' => 'form-N8werNqORAL8JvHEcvT7RnGC2CK9USvx4R9Jo6PVgds',
+    'form_token' => 'zJzJbZYMpXcRmDNbIp7UTQeEkp0EelVlWUl_XZ7yUu8',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
   $pane->cache = array();
@@ -141,13 +141,13 @@ function barony_courts_default_panels_mini() {
     'override_title_heading' => 'h2',
     'aligner_stop' => NULL,
     'override_title_markup' => NULL,
-    'barony_homepage_highlight_image' => 0,
+    'barony_homepage_highlight_image' => '190',
     'barony_homepage_highlight_links' => array(
       'value' => 'History|/courts',
       'format' => 'plain_text',
     ),
-    'form_build_id' => 'form-9KBsYQFVNIx0b8EYedUT7Gvyeqife1zbYd4z3N4aj5A',
-    'form_token' => 'LgdxYVMYtN8cpvhrI6iQGpew2RSFfC9CK0L2nBjj90I',
+    'form_build_id' => 'form-P_huZ-UWfBUuLxiLX8_6EPZddKsJ_GcSZKOlzigShJY',
+    'form_token' => 'zJzJbZYMpXcRmDNbIp7UTQeEkp0EelVlWUl_XZ7yUu8',
     'form_id' => 'barony_core_homepage_highlight_content_type_edit_form',
   );
   $pane->cache = array();

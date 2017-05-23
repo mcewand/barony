@@ -219,7 +219,6 @@ function barony_events_field_group_info() {
       0 => 'field_event_prereg',
       1 => 'field_event_reg_overview',
       2 => 'field_event_fees',
-      3 => 'field_event_member_discount',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

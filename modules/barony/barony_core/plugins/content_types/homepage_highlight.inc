@@ -57,6 +57,9 @@ function barony_core_homepage_highlight_content_type_render($subtype, $conf, $pa
  * Ctools configuration form callback.
  */
 function barony_core_homepage_highlight_content_type_edit_form($form, &$form_state) {
+  ctools_include('ajax');
+  ctools_include('modal');
+
   // Have to force the form inclusion, because ctools is different than the normal form API
   form_load_include($form_state, 'inc', 'barony_core','plugins/content_types/homepage_highlight');
   
