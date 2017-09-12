@@ -185,6 +185,36 @@ function barony_awards_default_page_manager_handlers() {
   $display->content['new-8bc368ce-82fd-48b0-bd0f-b3f492ee79d2'] = $pane;
   $display->panels['middle'][1] = 'new-8bc368ce-82fd-48b0-bd0f-b3f492ee79d2';
   $pane = new stdClass();
+  $pane->pid = 'new-3546499e-a8f4-4a99-9d1c-e68990b60bc4';
+  $pane->panel = 'right';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_award_rec_link';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'text_default',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '3546499e-a8f4-4a99-9d1c-e68990b60bc4';
+  $display->content['new-3546499e-a8f4-4a99-9d1c-e68990b60bc4'] = $pane;
+  $display->panels['right'][0] = 'new-3546499e-a8f4-4a99-9d1c-e68990b60bc4';
+  $pane = new stdClass();
   $pane->pid = 'new-b8f2e92c-6691-4e57-8935-00a60f2e48cd';
   $pane->panel = 'top';
   $pane->type = 'node_title';

@@ -76,6 +76,9 @@ function barony_awards_strongarm() {
         'path' => array(
           'weight' => '1',
         ),
+        'xmlsitemap' => array(
+          'weight' => '7',
+        ),
       ),
       'display' => array(),
     ),

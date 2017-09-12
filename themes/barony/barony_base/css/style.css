@@ -245,6 +245,18 @@ h2.block-title {
   padding-right: 30px;
 }
 
+
+/** 
+ * Universal
+ */
+section#block-system-main {
+  padding-bottom: 50px;
+}
+
+section#block-system-main article.node-barony-announcement {
+  min-height: 200px;
+}
+
 /**
  * Homepage
  */
@@ -622,6 +634,11 @@ h2.block-title {
 .views-field-field-award-badge {
   float: left;
   margin-right: 10px;
+}
+
+.award-rec {
+  margin: auto;
+  width: 150px;
 }
 
 /**
