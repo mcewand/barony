@@ -1,7 +1,7 @@
-name = Barony Dark
+name = Barony Base
 description = A Bootstrap sub-theme (CDN) for SCA websites.
 core = 7.x
-base theme = barony_base
+base theme = bootstrap
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -24,4 +24,4 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = css/dark.css
+stylesheets[all][] = css/style.css

@@ -13,9 +13,9 @@
  *
  * @ingroup theme_preprocess
  */
-function barony_dark_preprocess_page(&$variables) {
+function barony_base_preprocess_page(&$variables) {
   // Split out css & js additions to make this a little easier to read.
-  _barony_dark_file_additions();
+  _barony_base_file_additions();
 
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
@@ -83,19 +83,19 @@ function barony_dark_preprocess_page(&$variables) {
  *
  * @ingroup theme_process
  */
-function barony_dark_process_page(&$variables) {
+function barony_base_process_page(&$variables) {
   $variables['navbar_classes'] = implode(' ', $variables['navbar_classes_array']);
 }
 
 /**
  * General css & js additions
  */
-function _barony_dark_file_additions() {
+function _barony_base_file_additions() {
   // Add Font Awesome
   drupal_add_js('//use.fontawesome.com/76948938e9.js', 'external');
   // Add Google Fonts
   drupal_add_css('//fonts.googleapis.com/css?family=Uncial+Antiqua|Metamorphous', array('group' => CSS_THEME));
 
   // Custom additions
-  drupal_add_js(drupal_get_path('theme', 'barony_dark') . '/js/header-movement.js', array('type' => 'file', 'scope' => 'footer'));
+  drupal_add_js(drupal_get_path('theme', 'barony_base') . '/js/header-movement.js', array('type' => 'file', 'scope' => 'footer'));
 }
