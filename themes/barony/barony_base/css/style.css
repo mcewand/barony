@@ -397,6 +397,13 @@ section#block-system-main article.node-barony-announcement {
   padding-bottom: 40px;
 }
 
+.pane-barony-hompage-top {
+  padding-bottom: 30px;
+  border-bottom: 1px solid grey;
+  margin-bottom: 40px;
+}
+
+
 /**
  * Event pages
  */
