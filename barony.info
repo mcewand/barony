@@ -7,6 +7,7 @@ version = 7.x-1.0
 dependencies[] = barony_core
 
 ; Core
+dependencies[] = aggregator
 dependencies[] = block
 dependencies[] = contextual
 dependencies[] = dashboard
@@ -26,7 +27,6 @@ dependencies[] = search
 dependencies[] = shortcut
 dependencies[] = statistics
 dependencies[] = taxonomy
-dependencies[] = toolbar
 
 ; Calendars
 dependencies[] = calendar
@@ -34,9 +34,17 @@ dependencies[] = calendar_block
 
 ; chaos tools
 dependencies[] = ctools
+dependencies[] = ctools_custom_content
+dependencies[] = views_content
 
 ; date/time
 dependencies[] = date
+dependencies[] = date_all_day
+dependencies[] = date_popup
+dependencies[] = date_repeat
+dependencies[] = date_repeat_field
+dependencies[] = date_tools
+dependencies[] = date_views
 
 ; entities
 dependencies[] = entity
@@ -62,15 +70,20 @@ dependencies[] = wysiwyg
 ; layout
 dependencies[] = panels
 dependencies[] = panels_bootstrap_layouts
+dependencies[] = panels_ipe
 
 ; nodequeue
-dependencies[] = nodequeue
+; dependencies[] = nodequeue
 
 ; other
 dependencies[] = admin_menu
 dependencies[] = libraries
 dependencies[] = pathauto
 dependencies[] = token
+
+; sitemaps
+dependencies[] = footer_sitemap
+dependencies[] = xmlsitemap
 
 ; statistics
 dependencies[] = googleanalytics
@@ -89,10 +102,11 @@ dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = views_bootstrap
 dependencies[] = views_slideshow
+dependencies[] = views_slideshow_cycle
 
 ;; Development
-;dependencies[] = diff
-;dependencies[] = devel
+dependencies[] = diff
+dependencies[] = devel
 
 
 files[] = barony.profile
