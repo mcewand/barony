@@ -31,6 +31,14 @@ function barony_courts_views_api($module = NULL, $api = NULL) {
  */
 function barony_courts_node_info() {
   $items = array(
+    'barony_champion' => array(
+      'name' => t('Champion'),
+      'base' => 'node_content',
+      'description' => t('Create baronial champions and associate them with specific courts.'),
+      'has_title' => '1',
+      'title_label' => t('Name'),
+      'help' => '',
+    ),
     'barony_court' => array(
       'name' => t('Court'),
       'base' => 'node_content',
@@ -41,24 +49,5 @@ function barony_courts_node_info() {
     ),
   );
   drupal_alter('node_info', $items);
-  return $items;
-}
-
-/**
- * Implements hook_paragraphs_info().
- */
-function barony_courts_paragraphs_info() {
-  $items = array(
-    'court_champions' => array(
-      'name' => 'Court Champions',
-      'bundle' => 'court_champions',
-      'locked' => '1',
-    ),
-    'court_retinue' => array(
-      'name' => 'Court Retinue',
-      'bundle' => 'court_retinue',
-      'locked' => '1',
-    ),
-  );
   return $items;
 }

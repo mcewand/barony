@@ -229,24 +229,17 @@ function barony_courts_default_page_manager_handlers() {
   $display->content['new-2caa50a0-d761-495f-98fe-22c17458c8bf'] = $pane;
   $display->panels['left'][3] = 'new-2caa50a0-d761-495f-98fe-22c17458c8bf';
   $pane = new stdClass();
-  $pane->pid = 'new-f42e8162-0d05-4c4f-a330-78a9f1759b3d';
+  $pane->pid = 'new-d3aca88d-1810-47a0-8c8a-a5de43d34ee3';
   $pane->panel = 'right';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_court_retinue';
+  $pane->type = 'token';
+  $pane->subtype = 'node:field_retinue';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'paragraphs_view',
-    'delta_limit' => '0',
-    'delta_offset' => '0',
-    'delta_reversed' => 0,
-    'formatter_settings' => array(
-      'view_mode' => 'full',
-    ),
+    'sanitize' => 1,
     'context' => 'argument_entity_id:node_1',
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Retinue',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -257,26 +250,32 @@ function barony_courts_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'f42e8162-0d05-4c4f-a330-78a9f1759b3d';
-  $display->content['new-f42e8162-0d05-4c4f-a330-78a9f1759b3d'] = $pane;
-  $display->panels['right'][0] = 'new-f42e8162-0d05-4c4f-a330-78a9f1759b3d';
+  $pane->uuid = 'd3aca88d-1810-47a0-8c8a-a5de43d34ee3';
+  $display->content['new-d3aca88d-1810-47a0-8c8a-a5de43d34ee3'] = $pane;
+  $display->panels['right'][0] = 'new-d3aca88d-1810-47a0-8c8a-a5de43d34ee3';
   $pane = new stdClass();
-  $pane->pid = 'new-b4cf8a6c-b7e0-4776-9af9-892aa42cabd5';
+  $pane->pid = 'new-2d00c981-4c45-455e-9f86-1e3375d8bc49';
   $pane->panel = 'right';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_court_champions';
+  $pane->type = 'views';
+  $pane->subtype = 'barony_courts';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'paragraphs_view',
-    'delta_limit' => '0',
-    'delta_offset' => '0',
-    'delta_reversed' => 0,
-    'formatter_settings' => array(
-      'view_mode' => 'full',
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'court_helper_block',
+    'context' => array(
+      0 => 'argument_entity_id:node_1.nid',
     ),
-    'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -289,9 +288,9 @@ function barony_courts_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'b4cf8a6c-b7e0-4776-9af9-892aa42cabd5';
-  $display->content['new-b4cf8a6c-b7e0-4776-9af9-892aa42cabd5'] = $pane;
-  $display->panels['right'][1] = 'new-b4cf8a6c-b7e0-4776-9af9-892aa42cabd5';
+  $pane->uuid = '2d00c981-4c45-455e-9f86-1e3375d8bc49';
+  $display->content['new-2d00c981-4c45-455e-9f86-1e3375d8bc49'] = $pane;
+  $display->panels['right'][1] = 'new-2d00c981-4c45-455e-9f86-1e3375d8bc49';
   $pane = new stdClass();
   $pane->pid = 'new-b8f2e92c-6691-4e57-8935-00a60f2e48cd';
   $pane->panel = 'top';
@@ -413,7 +412,12 @@ function barony_courts_default_page_manager_pages() {
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
-      'bottom' => NULL,
+      'bottom' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '10',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '1',
+      ),
     ),
     'left' => array(
       'style' => 'bootstrap_region',
@@ -424,14 +428,43 @@ function barony_courts_default_page_manager_pages() {
     'top' => array(
       'style' => 'bootstrap_region',
     ),
+    'bottom' => array(
+      'style' => 'bootstrap_region',
+    ),
   );
   $display->cache = array();
-  $display->title = 'Court of Alasdair and Dianna';
+  $display->title = 'Our Landed Nobility and Their Retinue';
   $display->uuid = '70b461bd-82ce-4632-8acd-b4de387c6a36';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_barony_court__panel';
   $display->content = array();
   $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-c77e652c-788a-4362-8a93-18d02e4e5a35';
+  $pane->panel = 'bottom';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'barony_court_champions_retinue';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'context_entity:node_1',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c77e652c-788a-4362-8a93-18d02e4e5a35';
+  $display->content['new-c77e652c-788a-4362-8a93-18d02e4e5a35'] = $pane;
+  $display->panels['bottom'][0] = 'new-c77e652c-788a-4362-8a93-18d02e4e5a35';
   $pane = new stdClass();
   $pane->pid = 'new-b35600b5-ead3-42ab-8e8c-adbd4796b849';
   $pane->panel = 'left';
@@ -608,6 +641,36 @@ function barony_courts_default_page_manager_pages() {
   $pane->uuid = '7743161c-5e29-43d0-b828-63b45299d082';
   $display->content['new-7743161c-5e29-43d0-b828-63b45299d082'] = $pane;
   $display->panels['right'][3] = 'new-7743161c-5e29-43d0-b828-63b45299d082';
+  $pane = new stdClass();
+  $pane->pid = 'new-efafebed-df84-4796-909c-886cda4466c9';
+  $pane->panel = 'right';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_barony_preferences';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'text_default',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(),
+    'context' => 'context_entity:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'efafebed-df84-4796-909c-886cda4466c9';
+  $display->content['new-efafebed-df84-4796-909c-886cda4466c9'] = $pane;
+  $display->panels['right'][4] = 'new-efafebed-df84-4796-909c-886cda4466c9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

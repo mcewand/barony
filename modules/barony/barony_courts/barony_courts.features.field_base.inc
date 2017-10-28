@@ -10,13 +10,13 @@
 function barony_courts_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_court_baron'.
-  $field_bases['field_court_baron'] = array(
+  // Exported field_base: 'field_barony_preferences'.
+  $field_bases['field_barony_preferences'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_court_baron',
+    'field_name' => 'field_barony_preferences',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -24,35 +24,18 @@ function barony_courts_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_court_champions'.
-  $field_bases['field_court_champions'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_court_champions',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'paragraphs',
     'settings' => array(),
     'translatable' => 0,
-    'type' => 'paragraphs',
+    'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_court_champions_name'.
-  $field_bases['field_court_champions_name'] = array(
+  // Exported field_base: 'field_court_baron'.
+  $field_bases['field_court_baron'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_court_champions_name',
+    'field_name' => 'field_court_baron',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -107,7 +90,7 @@ function barony_courts_field_default_field_bases() {
       'cache_count' => 4,
       'cache_enabled' => 0,
       'granularity' => array(
-        'day' => 0,
+        'day' => 'day',
         'hour' => 0,
         'minute' => 0,
         'month' => 'month',
@@ -196,28 +179,13 @@ function barony_courts_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_court_retinue'.
-  $field_bases['field_court_retinue'] = array(
+  // Exported field_base: 'field_retinue'.
+  $field_bases['field_retinue'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_court_retinue',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'paragraphs',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'paragraphs',
-  );
-
-  // Exported field_base: 'field_court_retinue_name'.
-  $field_bases['field_court_retinue_name'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_court_retinue_name',
+    'field_name' => 'field_retinue',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -225,37 +193,9 @@ function barony_courts_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_court_retinue_role'.
-  $field_bases['field_court_retinue_role'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_court_retinue_role',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'barony_court_retinue',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'text_long',
   );
 
   return $field_bases;
