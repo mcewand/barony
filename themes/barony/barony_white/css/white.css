@@ -1,11 +1,11 @@
 
 h1,
 #navbar a.name {
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.6);
 }
 
 h2, h3, h4 {
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+  text-shadow: 1px 2px 1px rgba(0,0,0,0.5);
 }
 
 a,
@@ -33,7 +33,7 @@ ul#superfish-1-accordion li a,
 .barony-homepage-highlight-menu a,
 .barony-homepage-highlight-menu a:hover,
 .node-barony-event .horizontal-tabs ul.horizontal-tabs-list li.selected strong {
-  color: #fff;
+  color: black;
 }
 
 a:hover,
@@ -48,30 +48,35 @@ a:focus {
 
 body {
   /* Background pattern modified from http://backgrounds.mysitemyway.com */
-  background: url(../images/lines-grey.jpg);
+  /*background: url(http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/775/full/vintage-pea-green-patterns-4.jpg); */
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .main-container {
-  background-color: rgba(30, 30, 30, .8);
-  -moz-box-shadow: 3px 3px 3px 1px black;
-  -webkit-box-shadow: 3px 3px 3px 1px black;
-  box-shadow: 3px 3px 3px 1px black;
+  background-color: rgba(255, 255, 255, .8);
+  -moz-box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.1);
+  box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.1);
 
 }
 
 #navbar {
-  background-image: url('/sites/default/files/aspenleafdark.jpg');
+  /*background-image: url('/sites/default/files/aspenleafdark.jpg');*/
+  background-color: rgba(255, 255, 255, 1);
 }
+
 
 body,
 #navbar a.name,
 #footer-sitemap a,
+.view-display-id-homepage_block h3 a {
+  color: rgba(0, 0, 0, 1);
+}
 .view-barony-homepage-carousel .views-field-title a, 
 .view-barony-homepage-carousel .views-field-title a:hover,
 .view-barony-homepage-carousel .views-field-field-carousel-text a,
-.view-barony-homepage-carousel .views-field-field-carousel-text a:hover,
-.view-display-id-homepage_block h3 a {
-  color: #cccccc;
+.view-barony-homepage-carousel .views-field-field-carousel-text a:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 #navbar .navbar-location {
@@ -79,22 +84,22 @@ body,
 }
 
 .navbar-default {
-  -webkit-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.1);
 }
 
 /* Primary Menu
 /-------------------------------------------------------------- */
 ul#superfish-1 {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 ul#superfish-1.menu li a:link,
 ul#superfish-1.menu li a:visited,
 ul#superfish-1.sf-menu li a:link,
 ul#superfish-1.sf-menu li a:visited {
-  color: #999;
+  color: rgba(0, 0, 0, 1);
 }
 
 /* Hovers for parent menu item */
@@ -118,7 +123,7 @@ section#block-superfish-1 .sf-accordion-toggle,
 ul#superfish-1-accordion li,
 .view-barony-homepage-carousel,
 .barony-homepage-highlight {
-  background: #646464;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 ul#superfish-1.sf-menu li:hover ul li a:link,
@@ -209,7 +214,5 @@ ul#superfish-1-accordion li {
   -webkit-box-shadow: 1px 3px 3px 2px black;
   box-shadow: 1px 3px 3px 2px black;
 }
-
-
 
 

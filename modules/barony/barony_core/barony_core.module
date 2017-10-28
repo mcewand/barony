@@ -14,6 +14,100 @@ function barony_core_ctools_plugin_directory($module, $plugin) {
 }
 
 /**
+ * Implements hook_menu();
+ */
+function barony_core_menu() {
+  $items['admin/barony'] = array(
+    'title' => 'Barony',
+    'description' => 'A Drupal profile for SCA groups.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('barony_core_site_config_form'),
+    'access arguments' => array('administer barony'),
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => -7,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ * @return [type] [description]
+ */
+function barony_core_permission() {
+  return array(
+    'administer barony' => array(
+      'title' => t('Administer Barony'),
+      'description' => t('Administer site configuration.'),
+    ),
+  );
+}
+
+/**
+ * barony_core_site_config_form form callback
+ */
+function barony_core_site_config_form($form, &$form_state) {
+
+  $form['location'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Location'),
+    '#description' => t('Modern location of you group. e.g. "Denver, CO"'),
+    '#default_value' => variable_get('barony_header_location', ''),
+  );
+
+  $form['google'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Google Integration'),
+    '#collapsible' => TRUE,
+  );
+
+  $form['google']['ga_code'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google Analytics Code'),
+    '#description' => t('Your UA- code for GA. Include the entire code starting with "UA-".'),
+    '#default_value' => variable_get('googleanalytics_account', ''),
+  );
+
+  $form['google']['gcal_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('gCal Identifier'),
+    '#description' => t('Your gCal identifier. e.g. "caerthe-sca.org_l415hs2hlhjbruvce1bg06jipg%40group.calendar.google.com" '),
+    '#default_value' => variable_get('barony_gcal_id', ''),
+  );
+
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_FORM_ID_submit().
+ */
+function barony_core_site_config_form_submit(&$form, &$form_state) {
+dpm($form_state);
+
+  // Modern location
+  if (isset($form_state['input']['location'])) {
+    variable_set('barony_header_location', $form_state['input']['location']);   
+  }
+
+  if (isset($form_state['input']['ga_code'])) {
+    variable_set('googleanalytics_account', $form_state['input']['ga-code']);
+  }
+
+  if (isset($form_state['input']['gcal_id'])) {
+    variable_set('barony_gcal_id', $form_state['input']['gcal_id']);
+  }
+
+  drupal_set_message(t('Site changes saved.'), 'status');
+}
+
+
+/**
  * Implements hook_entity_info_alter().
  */
 function barony_core_entity_info_alter(&$entity_info) {

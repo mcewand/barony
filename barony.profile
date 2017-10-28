@@ -18,6 +18,12 @@ function barony_install_tasks($install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'function' => 'barony_theme_configuration',
     ),
+    'barony_config' => array(
+      'display_name' => st('Configure site'),
+      'type' => 'form',
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'function' => 'barony_site_configuration',
+    ),
   );
   return $tasks;
 }
@@ -88,7 +94,7 @@ function barony_module_selector_form() {
 		);
 	}
 
-	 $form['submit'] = array(
+	$form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue'),
   );
@@ -106,9 +112,6 @@ function barony_module_selector_form_submit(&$form, &$form_state) {
 			module_enable(array($key));
 		}
 	}
-
-	// Other site configuration
-	variable_set('site_frontpage', 'welcome');
 }
 
 
@@ -133,6 +136,14 @@ function barony_theme_chooser_options() {
 		1 =>	array(
 			'name' => 'barony_light',
 			'title' => t('Light'),
+		),
+		2 =>	array(
+			'name' => 'barony_green',
+			'title' => t('Green'),
+		),
+		3 =>	array(
+			'name' => 'barony_white',
+			'title' => t('White'),
 		),
 	);
 }
@@ -282,4 +293,48 @@ function barony_theme_configuration_form_submit(&$form, &$form_state) {
 
 	variable_set('theme_' . $selected . '_settings', $theme_settings);
 
+}
+
+
+/**
+ * Barony component selector.
+ */
+function barony_site_configuration() {	
+	drupal_set_title(st('Configure Site Content'));
+  return drupal_get_form('barony_site_config_form');
+}
+
+/**
+ * Form callback for theme configuration.
+ */
+function barony_site_config_form(){
+	$form = array();
+
+	$form['location'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Location'),
+    '#description' => t('Modern location of you group. e.g. "Denver, CO"'),
+  );
+	
+	$form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => st('Continue'),
+  );
+
+	return $form;
+}
+
+
+/**
+ * Implements hook_FORM_ID_submit().
+ */
+function barony_site_config_form_submit(&$form, &$form_state) {
+	
+	// Everyone gets the same homepage, to line up with panels
+	variable_set('site_frontpage', 'welcome');
+
+	// Modern location
+	if (isset($form_state['input']['location'])) {
+		variable_set('barony_header_location', $form_state['input']['location']);		
+	}
 }

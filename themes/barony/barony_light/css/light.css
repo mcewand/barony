@@ -48,7 +48,7 @@ a:focus {
 
 body {
   /* Background pattern modified from http://backgrounds.mysitemyway.com */
-  background: url(../images/lines-grey.jpg);
+  background: url(http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/775/full/vintage-pea-green-patterns-4.jpg);
 }
 
 .main-container {
@@ -60,18 +60,23 @@ body {
 }
 
 #navbar {
-  background-image: url('/sites/default/files/aspenleafdark.jpg');
+  /*background-image: url('/sites/default/files/aspenleafdark.jpg');*/
+  background-color: rgba(85, 107, 47, 1);
+}
+
+#navbar a.name {
+  color: #cccccc;
 }
 
 body,
-#navbar a.name,
+/*#navbar a.name,*/
 #footer-sitemap a,
 .view-barony-homepage-carousel .views-field-title a, 
 .view-barony-homepage-carousel .views-field-title a:hover,
 .view-barony-homepage-carousel .views-field-field-carousel-text a,
 .view-barony-homepage-carousel .views-field-field-carousel-text a:hover,
 .view-display-id-homepage_block h3 a {
-  color: #cccccc;
+  color: rgba(47, 79, 79, 1);
 }
 
 #navbar .navbar-location {
