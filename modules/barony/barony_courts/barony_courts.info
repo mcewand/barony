@@ -4,6 +4,7 @@ core = 7.x
 package = Barony
 version = 7.x-2.2
 dependencies[] = barony_awards
+dependencies[] = barony_core
 dependencies[] = email
 dependencies[] = paragraphs
 dependencies[] = phone

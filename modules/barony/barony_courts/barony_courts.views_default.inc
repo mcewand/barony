@@ -86,6 +86,11 @@ function barony_courts_views_default_views() {
   $handler = $view->new_display('page', 'Court List Page', 'court_list_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Former Barons and Baronesses';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date of Service -  start date (field_court_dates) */
+  $handler->display->display_options['sorts']['field_court_dates_value']['id'] = 'field_court_dates_value';
+  $handler->display->display_options['sorts']['field_court_dates_value']['table'] = 'field_data_field_court_dates';
+  $handler->display->display_options['sorts']['field_court_dates_value']['field'] = 'field_court_dates_value';
   $handler->display->display_options['path'] = 'history/courts';
 
   /* Display: Champions List Page */
@@ -93,7 +98,7 @@ function barony_courts_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Champions';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
       'field' => 'field_court_champions_role',
@@ -101,9 +106,16 @@ function barony_courts_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = 'barony-champions-list';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'title' => 'title',
+    'field_court_dates' => 'field_court_dates',
+  );
+  $handler->display->display_options['row_options']['separator'] = ': ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
@@ -126,6 +138,7 @@ function barony_courts_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_type'] = 'strong';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Date of Service */
@@ -380,6 +393,7 @@ function barony_courts_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['year_range'] = '-50:+1';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
   $handler->display->display_options['arguments']['date_argument']['granularity_reset'] = 0;

@@ -655,6 +655,16 @@ section#block-system-main article.node-barony-announcement {
   margin-bottom: 30px;
 }
 
+.barony-champions-list {
+  float:left;
+  margin-right: 5em;
+}
+
+.barony-champions-list ul {
+  padding-left: 1em;
+}
+
+
 /**
  * Resources Panel, Page, etc
  */
