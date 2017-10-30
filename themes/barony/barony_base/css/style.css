@@ -655,6 +655,10 @@ section#block-system-main article.node-barony-announcement {
   margin-bottom: 30px;
 }
 
+.view-display-id-court_champions_pane .views-field-nothing {
+  width: 50%;
+}
+
 .barony-champions-list {
   float:left;
   margin-right: 5em;
