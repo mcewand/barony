@@ -339,7 +339,10 @@ function barony_courts_default_page_manager_pages() {
   $page->admin_title = 'Barony Court';
   $page->admin_description = '';
   $page->path = 'court';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

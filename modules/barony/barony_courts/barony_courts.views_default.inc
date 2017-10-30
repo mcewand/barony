@@ -117,6 +117,21 @@ function barony_courts_views_default_views() {
   );
   $handler->display->display_options['row_options']['separator'] = ': ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'barony_court_champions' => 'barony_court_champions',
+    'event_activities' => 0,
+    'event_autocrat_roles' => 0,
+    'barony_court_retinue' => 0,
+    'event_fee_types' => 0,
+    'announcements_offices' => 0,
+    'resource_link_type' => 0,
+    'barony_site_tags' => 0,
+  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -125,7 +140,7 @@ function barony_courts_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Role */
+  /* Field: Field: Role */
   $handler->display->display_options['fields']['field_court_champions_role']['id'] = 'field_court_champions_role';
   $handler->display->display_options['fields']['field_court_champions_role']['table'] = 'field_data_field_court_champions_role';
   $handler->display->display_options['fields']['field_court_champions_role']['field'] = 'field_court_champions_role';
@@ -158,14 +173,15 @@ function barony_courts_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'term_node_tid';
   /* Sort criterion: Content: Date of Service -  start date (field_court_dates) */
   $handler->display->display_options['sorts']['field_court_dates_value']['id'] = 'field_court_dates_value';
   $handler->display->display_options['sorts']['field_court_dates_value']['table'] = 'field_data_field_court_dates';
   $handler->display->display_options['sorts']['field_court_dates_value']['field'] = 'field_court_dates_value';
-  /* Sort criterion: Content: Role (field_court_champions_role) */
-  $handler->display->display_options['sorts']['field_court_champions_role_tid']['id'] = 'field_court_champions_role_tid';
-  $handler->display->display_options['sorts']['field_court_champions_role_tid']['table'] = 'field_data_field_court_champions_role';
-  $handler->display->display_options['sorts']['field_court_champions_role_tid']['field'] = 'field_court_champions_role_tid';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -205,7 +221,7 @@ function barony_courts_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Role */
+  /* Field: Field: Role */
   $handler->display->display_options['fields']['field_court_champions_role']['id'] = 'field_court_champions_role';
   $handler->display->display_options['fields']['field_court_champions_role']['table'] = 'field_data_field_court_champions_role';
   $handler->display->display_options['fields']['field_court_champions_role']['field'] = 'field_court_champions_role';
@@ -326,7 +342,7 @@ function barony_courts_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Role */
+  /* Field: Field: Role */
   $handler->display->display_options['fields']['field_court_champions_role']['id'] = 'field_court_champions_role';
   $handler->display->display_options['fields']['field_court_champions_role']['table'] = 'field_data_field_court_champions_role';
   $handler->display->display_options['fields']['field_court_champions_role']['field'] = 'field_court_champions_role';
