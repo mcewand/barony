@@ -16,6 +16,8 @@
             if($(window).width() <= 400)
             {
               $('#navbar a.name').css('font-size', '100%');
+              $('.navbar-header').parent().css('padding-left', '0');
+              $('.navbar-header').parent().css('padding-right', '0');
             }
             $('#navbar a.name').css('font-size', '110%');
           }
