@@ -190,6 +190,13 @@ ul#superfish-1.sf-menu li ul li a.active {
   text-decoration: underline;
 }
 
+
+ul#superfish-1.sf-menu ul {
+  min-width: 13em;
+  padding: 0 1em 0 1em;
+}
+
+
 /**
  * Mobile Menu
  */
