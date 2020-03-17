@@ -13,6 +13,15 @@ have moved to a separate and dedicated project. Please file issues there:
 
 https://github.com/unicorn-fail/drupal-bootstrap-styles
 
+## Custom Scripts
+This project also uses custom/standalone PHP scripts opposed to vendor specific
+CLI programs (e.g. Drush or Drupal Console). This is primarily to ensure these
+scripts can be executed regardless of which vendor specific CLI program or
+version a maintainer may have installed. 
+
+### `./gen-theme-setting-docs.php`
+Generates the markdown documentation for all available theme settings.
+
 ## Releases
 This project attempts to provide more structured release notes. This allows the
 project to communicate more effectively to the users what exactly has changed

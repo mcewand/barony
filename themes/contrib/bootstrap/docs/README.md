@@ -24,14 +24,19 @@ a base theme like this.
 
 #### [Sub-Theming](<!-- @url sub_theming -->)
 
+#### [Templates](<!-- @url templates -->)
+
 #### [Utilities](<!-- @url utility -->)
 
-#### [Theme Registry](<!-- @url registry -->)
-
-- [Preprocess Functions (.vars.php)](<!-- @url theme_preprocess -->)
-- [Process Functions (.vars.php)](<!-- @url theme_process -->)
-- [Templates (.tpl.php)](<!-- @url templates -->)
-- [Theme Functions (.func.php)](<!-- @url theme_functions -->)
+#### [Plugin System](<!-- @url plugins -->)
+- [@BootstrapAlter](<!-- @url plugins_alter -->)
+- [@BootstrapForm](<!-- @url plugins_form -->)
+- [@BootstrapPreprocess](<!-- @url plugins_preprocess -->)
+- [@BootstrapPrerender](<!-- @url plugins_prerender -->)
+- [@BootstrapProcess](<!-- @url plugins_process -->)
+- [@BootstrapProvider](<!-- @url plugins_provider -->)
+- [@BootstrapSetting](<!-- @url plugins_setting -->)
+- [@BootstrapUpdate](<!-- @url plugins_update -->)
 
 #### [Project Maintainers](<!-- @url maintainers -->)
 
@@ -44,30 +49,28 @@ documentation. For clarity, we will always attempt to use this word verbosely
 in one of the following ways:
 
 - **[Drupal Bootstrap]** refers to the Drupal base theme project.
-- **[Bootstrap Framework]** refers to the external front end framework.
-- **[`drupal_bootstrap`](https://api.drupal.org/apis/drupal_bootstrap)** refers
+- **[Bootstrap Framework](https://getbootstrap.com/docs/3.4/)** refers to the
+  external front end framework.
+- **[drupal_bootstrap](https://api.drupal.org/apis/drupal_bootstrap)** refers
   to Drupal's bootstrapping process or phase.
   
 When referring to files inside the [Drupal Bootstrap] project directory, they
-will always start with `./sites/all/themes/bootstrap` and continue to specify
-the full path to the file or directory inside it. The dot (`.`) is
-representative of your Drupal installation's `DOCROOT` folder. For example, the
-file that is responsible for displaying the text on this page is located at
-`./sites/all/themes/bootstrap/docs/README.md`.
+will always start with `./themes/bootstrap` and continue to specify the full
+path to the file or directory inside it. The dot (`.`) is representative of
+your Drupal installation's `DOCROOT` folder. For example, the file that is
+responsible for displaying the text on this page is located at
+`./themes/bootstrap/docs/README.md`.
 
 When referring to files inside a sub-theme, they will always start with
-`./sites/all/themes/THEMENAME/`, where `THEMENAME` is the machine name of your
-sub-theme. They will continue to specify the full path to the file or directory
-inside it. For example, the primary file Drupal uses to determine if a theme
-exists is: `./sites/all/themes/THEMENAME/THEMENAME.info`.
+`./themes/THEMENAME/`, where `THEMENAME` is the machine name of your sub-theme.
+They will continue to specify the full path to the file or directory inside it.
+For example, the primary file Drupal uses to determine if a theme exists is:
+`./themes/THEMENAME/THEMENAME.info.yml`.
 
 {.alert.alert-info} **NOTE:** It is common practice to place projects found on
 Drupal.org inside a sub-folder named `contrib` and custom/site-specific code
 inside a `custom` folder. If your site is set up this way, please adjust all
-paths accordingly (i.e. `./sites/all/themes/contrib/bootstrap` and
-`./sites/all/themes/custom/THEMENAME`). If you have a multi-site setup, you
-will need to replace the `all` portion of the path with the appropriate site
-name (i.e. `./sites/example.com/themes/contrib/bootstrap`).
+paths accordingly (i.e. `./themes/contrib/bootstrap` and
+`./themes/custom/THEMENAME`).
 
 [Drupal Bootstrap]: https://www.drupal.org/project/bootstrap
-[Bootstrap Framework]: https://getbootstrap.com/docs/3.4/

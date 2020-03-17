@@ -1,4 +1,4 @@
 This directory is used to implement various core, contrib, Bootstrap and custom
-templates as well as theme and \[pre\]process functions.
+templates.
 
-Please refer to the [Theme Registry](<!-- @url registry -->) topic for more info.
+Please refer to the [Templates](<!-- @url templates -->) topic for more info.

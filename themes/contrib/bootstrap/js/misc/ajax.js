@@ -1,88 +1,191 @@
-(function ($) {
-
 /**
- * Override Drupal's AJAX prototype beforeSend function so it can append the
- * throbber inside the pager links.
+ * @file
+ * Extends methods from core/misc/ajax.js.
  */
-Drupal.ajax.prototype.beforeSend = function (xmlhttprequest, options) {
-  // For forms without file inputs, the jQuery Form plugin serializes the form
-  // values, and then calls jQuery's $.ajax() function, which invokes this
-  // handler. In this circumstance, options.extraData is never used. For forms
-  // with file inputs, the jQuery Form plugin uses the browser's normal form
-  // submission mechanism, but captures the response in a hidden IFRAME. In this
-  // circumstance, it calls this handler first, and then appends hidden fields
-  // to the form to submit the values in options.extraData. There is no simple
-  // way to know which submission mechanism will be used, so we add to extraData
-  // regardless, and allow it to be ignored in the former case.
-  if (this.form) {
-    options.extraData = options.extraData || {};
 
-    // Let the server know when the IFRAME submission mechanism is used. The
-    // server can use this information to wrap the JSON response in a TEXTAREA,
-    // as per http://jquery.malsup.com/form/#file-upload.
-    options.extraData.ajax_iframe_upload = '1';
+(function ($, window, Drupal, drupalSettings) {
 
-    // The triggering element is about to be disabled (see below), but if it
-    // contains a value (e.g., a checkbox, textfield, select, etc.), ensure that
-    // value is included in the submission. As per above, submissions that use
-    // $.ajax() are already serialized prior to the element being disabled, so
-    // this is only needed for IFRAME submissions.
-    var v = $.fieldValue(this.element);
-    if (v !== null) {
-      options.extraData[this.element.name] = v;
+  /**
+   * Attempts to find the closest glyphicon progress indicator.
+   *
+   * @param {jQuery|Element} element
+   *   A DOM element.
+   *
+   * @returns {jQuery}
+   *   A jQuery object.
+   */
+  Drupal.Ajax.prototype.findGlyphicon = function (element) {
+    return $(element).closest('.form-item').find('.ajax-progress.glyphicon')
+  };
+
+  /**
+   * Starts the spinning of the glyphicon progress indicator.
+   *
+   * @param {jQuery|Element} element
+   *   A DOM element.
+   * @param {string} [message]
+   *   An optional message to display (tooltip) for the progress.
+   *
+   * @returns {jQuery}
+   *   A jQuery object.
+   */
+  Drupal.Ajax.prototype.glyphiconStart = function (element, message) {
+    var $glyphicon = this.findGlyphicon(element);
+    if ($glyphicon[0]) {
+      $glyphicon.addClass('glyphicon-spin');
+
+      // Add any message as a tooltip to the glyphicon.
+      if ($.fn.tooltip && drupalSettings.bootstrap.tooltip_enabled) {
+        $glyphicon
+          .removeAttr('data-toggle')
+          .removeAttr('data-original-title')
+          .removeAttr('title')
+          .tooltip('destroy')
+        ;
+
+        if (message) {
+          $glyphicon.attr('data-toggle', 'tooltip').attr('title', message).tooltip();
+        }
+      }
+
+      // Append a message for screen readers.
+      if (message) {
+        $glyphicon.parent().append('<div class="sr-only message">' + message + '</div>');
+      }
     }
-  }
+    return $glyphicon;
+  };
 
-  var $element = $(this.element);
+  /**
+   * Stop the spinning of a glyphicon progress indicator.
+   *
+   * @param {jQuery|Element} element
+   *   A DOM element.
+   */
+  Drupal.Ajax.prototype.glyphiconStop = function (element) {
+    var $glyphicon = this.findGlyphicon(element);
+    if ($glyphicon[0]) {
+      $glyphicon.removeClass('glyphicon-spin');
+      if ($.fn.tooltip && drupalSettings.bootstrap.tooltip_enabled) {
+        $glyphicon
+          .removeAttr('data-toggle')
+          .removeAttr('data-original-title')
+          .removeAttr('title')
+          .tooltip('destroy')
+        ;
+      }
+    }
+  };
 
-  // Disable the element that received the change to prevent user interface
-  // interaction while the Ajax request is in progress. ajax.ajaxing prevents
-  // the element from triggering a new request, but does not prevent the user
-  // from changing its value.
-  $element.addClass('progress-disabled').attr('disabled', true);
+  /**
+   * Sets the throbber progress indicator.
+   */
+  Drupal.Ajax.prototype.setProgressIndicatorThrobber = function () {
+    var $element = $(this.element);
 
-  // Insert progressbar or throbber.
-  if (this.progress.type == 'bar') {
-    var progressBar = new Drupal.progressBar('ajax-progress-' + this.element.id, eval(this.progress.update_callback), this.progress.method, eval(this.progress.error_callback));
+    // Find an existing glyphicon progress indicator.
+    var $glyphicon = this.glyphiconStart($element, this.progress.message);
+    if ($glyphicon[0]) {
+      this.progress.element = $glyphicon.parent();
+      this.progress.glyphicon = true;
+      return;
+    }
+
+    // Otherwise, add a glyphicon throbber after the element.
+    if (!this.progress.element) {
+      this.progress.element = $(Drupal.theme('ajaxThrobber'));
+    }
     if (this.progress.message) {
-      progressBar.setProgress(-1, this.progress.message);
-    }
-    if (this.progress.url) {
-      progressBar.startMonitoring(this.progress.url, this.progress.interval || 500);
-    }
-    this.progress.element = $(progressBar.element).addClass('ajax-progress ajax-progress-bar');
-    this.progress.object = progressBar;
-    if (!$element.closest('.file-widget,.form-item').length) {
-      $element.before(this.progress.element);
-    }
-    else {
-      $element.closest('.file-widget,.form-item').after(this.progress.element);
-    }
-  }
-  else if (this.progress.type == 'throbber') {
-    this.progress.element = $('<div class="ajax-progress ajax-progress-throbber"><i class="glyphicon glyphicon-refresh glyphicon-spin"></i></div>');
-    if (this.progress.message) {
-      $('.throbber', this.progress.element).after('<div class="message">' + this.progress.message + '</div>');
+      this.progress.element.after('<div class="message">' + this.progress.message + '</div>');
     }
 
-    // If element is an input type, append after.
+    // If element is an input DOM element type (not :input), append after.
     if ($element.is('input')) {
       $element.after(this.progress.element);
-    }
-    else if ($element.is('select')) {
-      var $inputGroup = $element.closest('.form-item').find('.input-group-addon, .input-group-btn');
-      if (!$inputGroup.length) {
-        $element.wrap('<div class="input-group">');
-        $inputGroup = $('<span class="input-group-addon">');
-        $element.after($inputGroup);
-      }
-      $inputGroup.append(this.progress.element);
     }
     // Otherwise append the throbber inside the element.
     else {
       $element.append(this.progress.element);
     }
-  }
-};
+  };
 
-})(jQuery);
+
+  /**
+   * Handler for the form redirection completion.
+   *
+   * @param {Array.<Drupal.AjaxCommands~commandDefinition>} response
+   * @param {number} status
+   */
+  Drupal.Ajax.prototype.success = function (response, status) {
+    if (this.progress.element) {
+
+      // Stop a glyphicon throbber.
+      if (this.progress.glyphicon) {
+        this.glyphiconStop(this.progress.element);
+      }
+      // Remove the progress element.
+      else {
+        this.progress.element.remove();
+      }
+
+      // Remove any message set.
+      this.progress.element.parent().find('.message').remove();
+    }
+
+    // --------------------------------------------------------
+    // Everything below is from core/misc/ajax.js.
+    // --------------------------------------------------------
+
+    if (this.progress.object) {
+      this.progress.object.stopMonitoring();
+    }
+    $(this.element).prop('disabled', false);
+
+    // Save element's ancestors tree so if the element is removed from the dom
+    // we can try to refocus one of its parents. Using addBack reverse the
+    // result array, meaning that index 0 is the highest parent in the hierarchy
+    // in this situation it is usually a <form> element.
+    var elementParents = $(this.element).parents('[data-drupal-selector]').addBack().toArray();
+
+    // Track if any command is altering the focus so we can avoid changing the
+    // focus set by the Ajax command.
+    var focusChanged = false;
+    for (var i in response) {
+      if (response.hasOwnProperty(i) && response[i].command && this.commands[response[i].command]) {
+        this.commands[response[i].command](this, response[i], status);
+        if (response[i].command === 'invoke' && response[i].method === 'focus') {
+          focusChanged = true;
+        }
+      }
+    }
+
+    // If the focus hasn't be changed by the ajax commands, try to refocus the
+    // triggering element or one of its parents if that element does not exist
+    // anymore.
+    if (!focusChanged && this.element && !$(this.element).data('disable-refocus')) {
+      var target = false;
+
+      for (var n = elementParents.length - 1; !target && n > 0; n--) {
+        target = document.querySelector('[data-drupal-selector="' + elementParents[n].getAttribute('data-drupal-selector') + '"]');
+      }
+
+      if (target) {
+        $(target).trigger('focus');
+      }
+    }
+
+    // Reattach behaviors, if they were detached in beforeSerialize(). The
+    // attachBehaviors() called on the new content from processing the response
+    // commands is not sufficient, because behaviors from the entire form need
+    // to be reattached.
+    if (this.$form) {
+      var settings = this.settings || drupalSettings;
+      Drupal.attachBehaviors(this.$form.get(0), settings);
+    }
+
+    // Remove any response-specific settings so they don't get used on the next
+    // call by mistake.
+    this.settings = null;
+  };
+
+})(jQuery, this, Drupal, drupalSettings);

@@ -25,52 +25,57 @@ you've done that, you can override CSS, templates, and theme processing.
 ## Using the Starterkit {#starterkit}
 
 The starterkit provided by this base-theme supplies the basic file structure on
-how to construct a proper Bootstrap based sub-theme for use with a CDN Provider
+how to construct a proper Bootstrap based sub-theme for use with a [CDN Provider]
 (like [jsDelivr]) or for use with compiling [Bootstrap Framework] source files.
 
-{.alert.alert-info} **NOTE:** Using a CDN Provider is the preferred method
+{.alert.alert-info} **NOTE:** Using a [CDN Provider] is the preferred method
 for loading the [Bootstrap Framework] CSS and JS on simpler sites that do not
 use a site-wide CDN. There are advantages and disadvantages to using a
-CDN Provider and you will need to weigh the benefits based on your site's own
-requirements. Using a CDN Provider does mean that it depends on a third-party
+[CDN Provider] and you will need to weigh the benefits based on your site's own
+requirements. Using a [CDN Provider] does mean that it depends on a third-party
 service. There is no obligation or commitment made by this project or these
 third-party services that guarantees up-time or quality of service. If you need
 to customize Bootstrap, you must compile the [Bootstrap Framework] source code
 locally and disable the
-[`bootstrap_cdn_provider` theme setting](<!-- @url theme_settings -->).
+[`cdn_provider` theme setting](<!-- @url theme_settings#cdn_provider -->).
 
 {.alert.alert-warning} **WARNING:** All locally compiled versions of Bootstrap
-will be superseded by any enabled CDN Provider; **do not use both**.
+will be superseded by any enabled [CDN Provider]; **do not use both**.
 
-1. Copy `./sites/all/themes/bootstrap/starterkits/THEMENAME` to `./sites/all/themes`.
+1. Copy `./themes/bootstrap/starterkits/THEMENAME` to `./themes`.
    * Rename the `THEMENAME` directory to a unique machine readable name. This is
    your sub-theme's "machine name". When referring to files inside a sub-theme,
-   they will always start with `./sites/all/themes/THEMENAME/`, where `THEMENAME`
-   is the machine name of your sub-theme. They will continue to specify the full
-   path to the file or directory inside it. For example, the primary file Drupal
+   they will always start with `./themes/THEMENAME/`, where `THEMENAME` is the
+   machine name of your sub-theme. They will continue to specify the full path
+   to the file or directory inside it. For example, the primary file Drupal
    uses to determine if a theme exists is:
-   `./sites/all/themes/THEMENAME/THEMENAME.info`.
-2. Rename `./sites/all/themes/THEMENAME/THEMENAME.starterkit` to match
-   `./sites/all/themes/THEMENAME/THEMENAME.info`.
+   `./themes/THEMENAME/THEMENAME.info.yml`.
+2. Rename `./themes/THEMENAME/THEMENAME.starterkit.yml` to match
+   `./themes/THEMENAME/THEMENAME.info.yml`.
    * Open this file and change the name, description and any other properties
-     to suite your needs.
+   to suite your needs. Make sure to rename the library extension name as
+   well: `THEMENAME/framework`.
+3. Rename `./themes/THEMENAME/THEMENAME.libraries.yml`.
    * (Optional) If you plan on using a local precompiler (i.e. [Less] or [Sass])
      then uncomment the appropriate JavaScript entries inside this file to
      enable the assets provided by the [Bootstrap Framework].
+4. Rename `./themes/THEMENAME/THEMENAME.theme`.
+5. Rename `./themes/THEMENAME/config/schema/THEMENAME.schema.yml`
+   * Open this file and rename `- THEMENAME.settings:` and `'THEMETITLE settings'`
+6. Rename `./themes/THEMENAME/config/install/THEMENAME.settings.yml`
    * (Optional) If you plan on using a local precompiler (i.e. [Less] or [Sass])
-     then you will need to disable the
-     [`bootstrap_cdn_provider` theme setting](<!-- @url theme_settings -->).
+     then you will need to disable the `cdn_provider`
+     [`cdn_provider` theme setting](<!-- @url theme_settings#cdn_provider -->).
      You can do this several different ways, but it's recommended that you
-     uncomment the following line in this file so the CDN Provider is
+     uncomment the following line in this file so the [CDN Provider] is
      automatically disabled when your sub-theme is installed:
-     ```
-     ; Uncomment if using Sass or Less source files. This disables the CDN provider
-     ; so compiled source files can be used instead.
-     settings[bootstrap_cdn_provider] = ''
+     ```yaml
+     # Disable the CDN provider so compiled source files can be used.
+     cdn_provider: ''
      ```
 
 {.alert.alert-warning} **WARNING:** Ensure that the `.starterkit` suffix is
-not present on your sub-theme's `.info` filename. This suffix is simply a
+not present on your sub-theme's `.info.yml` filename. This suffix is simply a
 stop gap measure to ensure that the bundled starter kit sub-theme cannot be
 enabled or used directly. This helps people unfamiliar with Drupal avoid
 modifying the starter kit sub-theme directly and instead forces them to create
@@ -78,7 +83,7 @@ a new sub-theme to modify.
 
 ## Using Source Files {#source}
 
-By default, the starterkit is designed to be used with a CDN Provider for
+By default, the starterkit is designed to be used with a [CDN Provider] for
 quick setup.
 
 While there are a multitude of different approaches on how to actually compile
@@ -92,7 +97,7 @@ developer, to figure out which solution is best for your particular needs.
 - You must use the latest `3.x.x` version of [Bootstrap Framework LESS Source Files]
   ending in the `.less` extension, not files ending in `.css`.
 - You must download a copy of [Drupal Bootstrap Styles] and copy over the `less`
-  folder located at `./drupal-bootstrap-styles/src/3.x.x/7.x-3.x/less`.
+  folder located at `./drupal-bootstrap-styles/src/3.x.x/8.x-3.x/less`.
 
 ### SASS {#sass}
 - You must understand the basic concept of using the [Sass] CSS pre-processor.
@@ -100,21 +105,21 @@ developer, to figure out which solution is best for your particular needs.
 - You must use the latest `3.x.x` version of [Bootstrap Framework SASS Source Files]
   ending in the `.scss` extension, not files ending in `.css`.
 - You must download a copy of [Drupal Bootstrap Styles] and copy over the `scss`
-  folder located at `./drupal-bootstrap-styles/src/3.x.x/7.x-3.x/scss`.
+  folder located at `./drupal-bootstrap-styles/src/3.x.x/8.x-3.x/scss`.
 
 ### Compile {#compile}
 
 Download and extract the source files into the root of your new sub-theme:
-`./sites/all/themes/THEMENAME`. After it has been extracted, the directory should be
-renamed (if needed) so it reads `./sites/all/themes/THEMENAME/bootstrap`.
+`./themes/THEMENAME`. After it has been extracted, the directory should be
+renamed (if needed) so it reads `./themes/THEMENAME/bootstrap`.
 
 If for whatever reason you have an additional `bootstrap` directory wrapping
-the first `bootstrap` directory (e.g. `./sites/all/themes/THEMENAME/bootstrap/bootstrap`),
+the first `bootstrap` directory (e.g. `./themes/THEMENAME/bootstrap/bootstrap`),
 remove the wrapping `bootstrap` directory. You will only ever need to touch
 these files if or when you upgrade your version of the [Bootstrap Framework].
 
 {.alert.alert-warning} **WARNING:** Do not modify the files inside of
-`./sites/all/themes/THEMENAME/bootstrap` directly. Doing so may cause issues when
+`./themes/THEMENAME/bootstrap` directly. Doing so may cause issues when
 upgrading the [Bootstrap Framework] in the future.
 
 Depending on which precompiler you chose, you should have a `less/style.less`
@@ -127,11 +132,13 @@ Please refer to the [Theme Settings](<!-- @url theme_settings -->) topic.
 
 ## Override Templates {#templates}
 Please refer to the [Templates](<!-- @url templates -->) and
-[Theme Registry](<!-- @url registry -->) topics.
+[Plugin System](<!-- @url plugins -->) topics.
 
 ## Enable Your New Sub-theme {#enable}
 In your Drupal site, navigate to `admin/appearance` and click the `Enable and
-set default` link next to your newly created sub-theme.
+set default` link next to your newly created sub-theme. Now that you've
+enabled your starterkit, please refer to the starterkit's documentation page
+to customize.
 
 [Drupal Bootstrap]: https://www.drupal.org/project/bootstrap
 [Drupal Bootstrap Styles]: https://github.com/unicorn-fail/drupal-bootstrap-styles
@@ -141,3 +148,4 @@ set default` link next to your newly created sub-theme.
 [jsDelivr]: http://www.jsdelivr.com
 [Less]: http://lesscss.org
 [Sass]: http://sass-lang.com
+[CDN Provider]: <!-- @url plugins_provider -->

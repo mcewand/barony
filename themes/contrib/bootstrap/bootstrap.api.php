@@ -2,13 +2,11 @@
 
 /**
  * @file
- * List of available hook and alter APIs for use in your sub-theme.
+ * List of available procedural hook and alter APIs for use in your sub-theme.
  */
 
 /**
- * @defgroup api APIs
- *
- * List of available hook and alter APIs for use in your sub-theme.
+ * @addtogroup plugins_alter
  *
  * @{
  */
@@ -20,21 +18,23 @@
  *   An associative array containing the text and classes to be matched, passed
  *   by reference.
  *
- * @see _bootstrap_colorize_text()
+ * @see \Drupal\bootstrap\Bootstrap::cssClassFromString()
  */
 function hook_bootstrap_colorize_text_alter(array &$texts) {
   // This matches the exact string: "My Unique Button Text".
-  $texts['matches'][t('My Unique Button Text')] = 'primary';
+  // Note: the t() function in D8 returns a TranslatableMarkup object.
+  // It must be rendered to a string before it can be added as an array key.
+  $texts['matches'][t('My Unique Button Text')->render()] = 'primary';
 
   // This would also match the string above, however the class returned would
   // also be the one above; "matches" takes precedence over "contains".
-  $texts['contains'][t('Unique')] = 'notice';
+  $texts['contains'][t('Unique')->render()] = 'notice';
 
   // Remove matching for strings that contain "apply":
-  unset($texts['contains'][t('Apply')]);
+  unset($texts['contains'][t('Apply')->render()]);
 
   // Change the class that matches "Rebuild" (originally "warning"):
-  $texts['contains'][t('Rebuild')] = 'success';
+  $texts['contains'][t('Rebuild')->render()] = 'success';
 }
 
 /**
@@ -44,147 +44,46 @@ function hook_bootstrap_colorize_text_alter(array &$texts) {
  *   An associative array containing the text and icons to be matched, passed
  *   by reference.
  *
- * @see _bootstrap_iconize_text()
+ * @see \Drupal\bootstrap\Bootstrap::glyphiconFromString()
  */
 function hook_bootstrap_iconize_text_alter(array &$texts) {
   // This matches the exact string: "My Unique Button Text".
-  $texts['matches'][t('My Unique Button Text')] = 'heart';
+  // Note: the t() function in D8 returns a TranslatableMarkup object.
+  // It must be rendered to a string before it can be added as an array key.
+  $texts['matches'][t('My Unique Button Text')->render()] = 'heart';
 
   // This would also match the string above, however the class returned would
   // also be the one above; "matches" takes precedence over "contains".
-  $texts['contains'][t('Unique')] = 'bullhorn';
+  $texts['contains'][t('Unique')->render()] = 'bullhorn';
 
   // Remove matching for strings that contain "filter":
-  unset($texts['contains'][t('Filter')]);
+  unset($texts['contains'][t('Filter')->render()]);
 
   // Change the icon that matches "Upload" (originally "upload"):
-  $texts['contains'][t('Upload')] = 'ok';
+  $texts['contains'][t('Upload')->render()] = 'ok';
 }
 
 /**
- * This hook allows sub-themes to process all form elements.
+ * Allows sub-themes to alter element types that should be rendered as inline.
  *
- * For this hook to be recognized, it must reside directly inside the
- * template.php file or via a file that is directly included into template.php.
+ * @param array $types
+ *   The list of element types that should be rendered as inline.
  *
- * Any time a hook is added or removed, the Drupal cache must be completely
- * cleared and rebuilt for the changes to take effect.
+ * @deprecated in bootstrap:8.x-3.21 and is removed from bootstrap:8.x-4.0.
+ *   This method will be removed when process managers can be sub-classed.
  *
- * Implementations of this hook should check to see if the element has a
- * property named #bootstrap_ignore_process and check if it is set to TRUE.
- * If it is, the hook should immediately return with the unaltered element.
- *
- * @param array $element
- *   The element array, this is NOT passed by reference and must return the
- *   altered element instead.
- * @param array $form_state
- *   The form state array, passed by reference.
- * @param array $form
- *   The complete form array, passed by reference.
- *
- * @return array
- *   The altered element array.
- *
- * @see bootstrap_element_info_alter()
- * @see form_builder()
- * @see drupal_process_form()
+ * @see https://www.drupal.org/project/bootstrap/issues/2868538
  */
-function hook_form_process(array $element, array &$form_state, array &$form) {
-  return $element;
+function hook_bootstrap_inline_element_types(array &$types) {
+  // Remove certain types from the list.
+  foreach (['number', 'tel'] as $type) {
+    $index = array_search($type, $types);
+    if ($index !== FALSE) {
+      unset($types[$index]);
+    }
+  }
 }
 
 /**
- * This hook allows sub-themes to process a specific form element type.
- *
- * For this hook to be recognized, it must reside directly inside the
- * template.php file or via a file that is directly included into template.php.
- *
- * Any time a hook is added or removed, the Drupal cache must be completely
- * cleared and rebuilt for the changes to take effect.
- *
- * If there is a matching "form_process_HOOK" function already defined
- * (provided by core), it will be replaced. The theme replacing it will be
- * responsible for fully processing the element as it was prior.
- *
- * Implementations of this hook should check to see if the element has a
- * property named #bootstrap_ignore_process and check if it is set to TRUE.
- * If it is, the hook should immediately return with the unaltered element.
- *
- * @param array $element
- *   The element array, this is NOT passed by reference and must return the
- *   altered element instead.
- * @param array $form_state
- *   The form state array, passed by reference.
- * @param array $form
- *   The complete form array, passed by reference.
- *
- * @return array
- *   The altered element array.
- *
- * @see bootstrap_element_info_alter()
- * @see form_builder()
- * @see drupal_process_form()
- */
-function hook_form_process_HOOK(array $element, array &$form_state, array &$form) {
-  return $element;
-}
-
-/**
- * This hook allows sub-themes to alter all elements before it's rendered.
- *
- * For this hook to be recognized, it must reside directly inside the
- * template.php file or via a file that is directly included into template.php.
- *
- * Any time a hook is added or removed, the Drupal cache must be completely
- * cleared and rebuilt for the changes to take effect.
- *
- * Implementations of this hook should check to see if the element has a
- * property named #bootstrap_ignore_pre_render and check if it is set to TRUE.
- * If it is, the hook should immediately return with the unaltered element.
- *
- * @param array $element
- *   The element array, this is NOT passed by reference and must return the
- *   altered element instead.
- *
- * @return array
- *   The altered element array.
- *
- * @see bootstrap_element_info_alter()
- */
-function hook_pre_render(array $element) {
-  return $element;
-}
-
-/**
- * This hook allows sub-themes to alter a specific element before it's rendered.
- *
- * For this hook to be recognized, it must reside directly inside the
- * template.php file or via a file that is directly included into template.php.
- *
- * Any time a hook is added or removed, the Drupal cache must be completely
- * cleared and rebuilt for the changes to take effect.
- *
- * If there is a matching "form_pre_render_HOOK" function already defined
- * (provided by core), it will be replaced. The theme replacing it will be
- * responsible for fully processing the element as it was prior.
- *
- * Implementations of this hook should check to see if the element has a
- * property named #bootstrap_ignore_pre_render and check if it is set to TRUE.
- * If it is, the hook should immediately return with the unaltered element.
- *
- * @param array $element
- *   The element array, this is NOT passed by reference and must return the
- *   altered element instead.
- *
- * @return array
- *   The altered element array.
- *
- * @see bootstrap_element_info_alter()
- */
-function hook_pre_render_HOOK(array $element) {
-  return $element;
-}
-
-/**
- * @} End of "defgroup subtheme_api".
+ * @} End of "addtogroup".
  */
